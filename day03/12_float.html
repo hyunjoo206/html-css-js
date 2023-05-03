@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float 속성</title>
+    <style>
+        .p-box{
+            background-color: yellowgreen;
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            float: right;
+        }
+
+        /* p-box::after를 구성하여 p-box 뒤에 빈 컨텐츠 하나를 추가 
+            display :block으로 변경하여 높이를 잡음 */
+
+        /* 공식처럼 float 쓰면 after 사용함 */
+        .p-box::after{
+            content:"";
+            clear: both;
+            display: block;
+        }
+
+        /* 문제 */
+
+        .p-box2{
+            border: 5px solid black;
+            /* background-color: violet; */
+            width: 500px;
+            /* height: 500px; */
+        }
+
+        /* height 안 주고 자식 네모를 안에 넣으려면? */
+        .p-box2::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+
+
+        .l_box{
+            width: 50%;
+            height: 500px;
+            background-color: yellow;
+            float: left;
+        }
+        
+        .r_box{
+            width: 50%;
+            height: 500px;
+            background-color: green;
+            float: right;
+        }
+
+        /* 연습3 */
+        p-box3{
+            width: 500px;
+            height: 500px;
+            border: 5px solid black;
+            background-color: aqua;    
+        }
+
+        .box1{
+            width: calc(100%/3);
+            height: 500px;
+            background-color: red;
+            float: left;
+        }
+
+        .box2{
+            width: calc(100%/3);
+            height: 500px;
+            background-color: yellow;
+            float:left ;
+        }
+
+        .box3{
+            width: calc(100%/3);
+            height: 500px;
+            background-color: blue;
+            float: right;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!-- 
+        /* float : 요소를 띄우는 속성
+        - 원래 웹페이지에서 이미지를 텍스트와 함께 띄우려고 만든 속성
+        - 한 라인에 요소들을 각각 오른쪽과 왼쪽에 배치할 때 유용
+       ** float 속성 사용 시 자식 요소의 높이 값을 부모가 인식할 수 없음 (주의)
+        - ::after 란 가상선택자를 이용하여 css상에서 가상요소로 부모가 높이를 인식할 수 있게 함.
+        - 클래스::after{
+            content : "";
+            clear : both;
+            display : block;
+        } */ -->
+
+
+     <div class="p-box">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+     </div>
+
+     <div class="p-box2">
+        <div class="l_box"></div>
+        <div class="r_box"></div>
+     </div>
+     <br>
+    <div class="p-box3">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+
+</body>
+</html>

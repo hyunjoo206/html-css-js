@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>font 속성</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+    <style>
+        /* 
+        폰트지정 : font-family
+            - 지정하려는 폰트를 ,로 나열
+            - 한글 폰트의 경우 한글이름과 영문이름을 같이 사용
+            - 마지막 폰트는 기본형으로 지정
+            - "폰트명" "나눔 고딕" 굴림 : 띄어쓰기가 없는 경우 ""는 생략 가능
+        폰트 크기 : font-size
+        폰트 스타일 : font-style
+        폰트 굵기 : font-weight 100~900사이의 값을 100단위로 (700:bold)
+        font : 폰트 속성을 한번에 적용하는 속성
+            - font : (font-style / font weight) / font-size / font-family순으로 지정
+        */
+
+        /* serif : 유사한 폰트 */
+
+        /* font-size 의 em값은 부모와 관련. 부모보다 크게 쓰고 싶으면 2em이라고 사용하면 됨
+            rem은 최상위 폰트의 배수로 뛴다고 생각하면 됨
+        */
+
+        .font {
+            /* font-family: '맑은 고딕', 'Malgun Gothic', serif;
+            font-family: 'Song Myung', serif;
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 700; */
+
+            /* 한 줄로 쓰려면 */
+            font: italic bold 60px 'Song Myung',serif;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="font">다들 주목!!!<br> 해산!!!! </div>
+    <img src="/img/gotohome.jpg" alt="">
+</body>
+</html>

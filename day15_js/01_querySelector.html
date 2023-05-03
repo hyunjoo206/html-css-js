@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuerySelector</title>
+</head>
+<body>
+    <h1>
+        querySelector(), querySelectorAll() :
+        HTML 노드(관리객체)로 리턴하는 메서드
+    </h1>
+    <ul>
+        <li>
+            getElementBy** : HTMLCollection으로 리턴 (요즘 많이 사용) <br>
+            name, id 속성으로 접근이 가능.
+        </li>
+        <li>
+            querySelector : NodeList 형태로 리턴 <br> 
+            [0] index 번호로만 접근 가능
+        </li>
+        <li>
+            querySelector, querySelectorAll : 보다 더 구체적인 엘리먼트를 선택하고 싶을 경우 <br>
+            getElement** : 더 빠르고 더 많은 지원을 받을 수 있음 (ex:id)
+        </li>
+    </ul>
+    <script>
+        // querySelector - 단일노드로 리턴
+        const h1 = document.querySelector('h1'); 
+        console.log(h1);
+        console.log(typeof h1);
+
+        // querySelectorAll - NodeList 형태로 리턴
+        const li = document.querySelectorAll('li');
+        console.log(li);
+        console.log(typeof li);
+
+
+    </script>
+
+</body>
+</html>

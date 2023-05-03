@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text 속성</title>
+    <style>
+
+            /* 
+            text-indent : 들여쓰기
+            text-align : 정렬 left(왼), right(오), center(중앙), justify(양쪽)
+            text-decoration : 줄긋기 
+                 - none : 없음
+                 - underline : 밑줄
+                 - overline : 윗줄
+                 - line-through : 가운데 취소선
+            */
+
+            /* 
+            css 표준 단위
+            em : 배수, 부모값을 기준으로 배수
+            rem : 배수, 문서의 값을 기준으로 배수
+            % : 퍼센트, 현재값을 기준으로 %
+            px : 픽셀
+            cm : 센티미터
+            mm : 밀리미터
+            in : 인치 1in = 96px
+            pt : 포인터 1pt= 1/72in 
+            pc : 피카소
+            deg : 각도
+             */
+
+            p{
+                text-indent: 20px;
+                /* indent : 들여쓰기 */
+
+                text-align: center;
+                text-decoration: overline;
+            }
+
+            .line{
+                /* text-overflow: 텍스트가 범위를 넘어가는 경우
+                    ellipsis (...) : 줄여줌 
+                    white-space : 글자가 범위를 넘어가면 넘어간 글자들을 어떻게 처리할지 
+                        nowrap : 한 줄로 처리
+                */
+
+                /* 
+                overflow : 요소가 넘어가면 어떻게 처리할 것인지를 정하는 속성
+                    - hidden : 숨김
+                    - scroll : 스크롤 생성
+                    - auto : 
+                */
+
+                /* 아래 세 개는 한 세트임!!!! */
+                text-overflow: ellipsis;
+                white-space: nowrap; /*넘어가는 애들 그냥 한 줄로*/
+                overflow: hidden; /*...으로 넘어가는 애들 생략*/
+            }
+
+    </style>
+</head>
+<body>
+    <p>
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+    </p>
+    <p class="line">
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+        안녕하세요 저는 홍길동입니다.
+    </p>
+</body>
+</html>

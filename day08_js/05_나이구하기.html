@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나이구하기</title>
+</head>
+<body>
+    이름 : <input type="text" id="name"> <br>
+    주민번호 : <input type="text" id="rNum"> <br>
+    <button type="button" onclick="print()">확인</button>
+    <h3 id="result">
+        <!-- 이름, 생년월일, 성별, 나이 -->
+
+    </h3>
+    <script>
+        //오늘날짜
+        let now = new Date();
+        console.log(now); // => Thu Apr 13 2023 14:47:59 GMT+0900 (한국 표준시)
+        console.log(now.getFullYear()); //2023
+        console.log(now.getMonth()+1); //0~11월 +1
+        console.log(now.getDate()); //일을 반환 1~31
+        console.log(now.getDay()); //요일 반환 0(일)~6(토)
+        //getHours() / getMinutes() / getSeconds()
+
+        let today = now.toLocaleDateString(); //현재 날짜형태로 변환
+        console.log(today)
+        let time = now.toLocaleTimeString(); //현재 시간
+        console.log(time);
+        let datetime = now.toLocaleString(); //현재 날짜, 시간 같이 
+        console.log(datetime);
+
+        //이거 이용해서 해보기~
+        let a = now.getFullYear() -2000; 
+        console.log(a); //23
+
+        
+        console.log('--------------------')
+
+        function print(){
+            let name = document.getElementById('name').value;
+            let rNum = document.getElementById('rNum').value;
+
+            let age= parseInt(rNum.slice(0,2)); //변수선언
+
+            let birth = rNum.slice(0, rNum.indexOf('-'));
+
+            let genderNum = parseInt(rNum.slice(7, 8));
+
+            let gender = genderNum%2==0  ? "여자" : "남자";
+            //2로 나눴을때 나머지가 0이면 여자
+
+            if(genderNum<=2){ //주민번호 뒷자리 첫번째 자리가 2보다 작으면(1,2이면)
+                age = now.getFullYear() - (1900 + age); 
+            }else{ 
+                age = now.getFullYear() - (2000 + age);
+            }
+
+            //화면에 출력
+            document.getElementById('result').innerHTML=
+            `
+            <li>이름 : ${name}</li> 
+            <li>생년월일 : ${birth}</li> 
+            <li>성별 : ${gender}</li> 
+            <li>나이 : ${age}</li> 
+            `;
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <title>배달의민족</title>
+    <!--  폰트 font-family: 'Jua', sans-serif; -->
+    <style>
+        @font-face {
+            font-family: Do_Hyeon;
+            src: url(/font/Do_Hyeon/DoHyeon-Regular.ttf);
+        }
+
+        body{
+            font-family:Do_Hyeon;
+            background-color: rgb(57, 211, 203) ;
+        }
+
+        div{
+            text-align: center;
+        }
+
+        .header{
+            margin : 50px;
+            color: white;
+        }
+        
+        .header>h1{
+            font-size: 60px;
+            font-weight: 500;
+        }
+
+        .header>h3{
+            font-size: 40px;
+            font-weight: 300;
+        }
+
+        .menu{
+            width: 400px;
+            height: 500px;
+            margin: 0 auto;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 40px 1px rgba(0, 0, 0, 0.185);
+            border-radius: 10px;
+            margin-bottom: 50px;
+        }
+
+        #sushi{
+            width: 400px;
+            height: 210px;
+            border-radius: 10px 10px 0 0;
+            background-image: url(/img/susi.jpg);
+            background-size: 400px 210px;
+        }
+        #korean{
+            width: 400px;
+            height: 210px;
+            border-radius: 10px 10px 0 0;
+            background-image: url(/img/korean.jpg);
+            background-size: 400px 210px;
+        }
+        #burger{
+            width: 400px;
+            height: 210px;
+            border-radius: 10px 10px 0 0;
+            background-image: url(/img/burger.jpg);
+            background-size: 400px 210px;
+        }
+        #pizza{
+            width: 400px;
+            height: 210px;
+            border-radius: 10px 10px 0 0;
+            background-image: url(/img/pizza.jpg);
+            background-size: 400px 210px;
+        }
+
+        .menu>div>h2 {
+            font-weight: 500;
+            font-size: 35px;
+            margin: 10px;
+        }
+
+        .menu>div:last-child{
+            padding: 20px;
+        }
+
+        .menu>div>p:last-child{
+            font-size: 30px;
+            color:rgb(57, 211, 203);
+        }
+
+        .rider{
+            position:absolute;
+            position: fixed;
+            right:10%;
+            top:80%;
+            filter: drop-shadow(100px 10px 10px white);
+
+            animation-name: move;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes move{
+            from{
+                right: 10%;
+            }
+            /* 50%{
+                right: 50%;
+            } */
+            to{
+                right: 90%;
+            }
+
+        }
+
+    </style>
+</head>
+<body>
+    <img src="/img/beamin.png" alt="" width="100px" class="rider">
+    <div class="header">
+        <h1>배달의 민족</h1>
+        <h3>넌 배달할 때가 제일 멋있어</h3>
+    </div>
+
+    <div class="menu">
+        <div id="sushi"></div>
+        <div>
+            <h2>맛있는 초밥</h2>
+            <p>주머니가 가벼운 당신의 마음까지 <br> 생각한 착한 가격!</p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div id="korean"></div>
+        <div>
+            <h2>맛있는 한식</h2>
+            <p>주머니가 가벼운 당신의 마음까지 <br> 생각한 착한 가격!</p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <div id="pizza"></div>
+        <div>
+            <h2>맛있는 피자</h2>
+            <p>주머니가 가벼운 당신의 마음까지 <br> 생각한 착한 가격!</p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+
+    <div class="menu">
+        <div id="burger"></div>
+        <div>
+            <h2>맛있는 햄버거</h2>
+            <p>주머니가 가벼운 당신의 마음까지 <br> 생각한 착한 가격!</p>
+            <p> <del>25,000원</del> 15,000원</p>
+            <p>바로결제</p>
+        </div>
+    </div>
+
+
+</body>
+</html>

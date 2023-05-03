@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map예제</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="sub" placeholder="과목">
+        <input type="text" id="num" placeholder="점수">
+        <button type="button" onclick="add();">추가</button>
+        <button type="button" id="printBtn">출력</button>
+        <button type="button" id="totBtn">결과</button>
+    </form>
+    <ul id="result"></ul>
+    <h3 id="tot"></h3>
+
+
+    <script>
+        const sub = document.getElementById('sub');
+        const num = document.getElementById('num');
+        const result = document.getElementById('result');
+        const tot = document.getElementById('tot');
+        const printBtn = document.getElementById('printBtn');
+        const totBtn = document.getElementById('totBtn');
+        let sum = 0;
+        let avg = 0;
+        let pass =''; //합격여부
+
+        const myMap = new Map();
+
+        // 추가버튼 눌렀을 때 실행할 함수
+        // 과목에 입력한 값과 점수에 입력한 값을 가져와서 map에 담기
+        // map에 담으려면 map 객체를 생성해야함(함수 밖에 하기)
+        function add(){
+            let subVal = sub.value;
+            let numVal = Number(num.value);
+            //myMap에 set으로 값을 추가하기
+            myMap.set(subVal, numVal);
+            sum+=numVal;
+            console.log(myMap);
+            console.log(sum);
+        }
+
+        //출력버튼 누르면 실행될 함수
+        // map에 있는 key와 value를 가져와서 h3 태그 안에 넣어서 출력하기
+
+        printBtn.addEventListener("click", function(){
+            let str=''; //결과 누적 변수 
+
+            myMap.forEach(function(v, k){
+                str += `<li>${k}:${v}<li>`;
+            })
+            result.innerHTML = str;
+        })
+
+        totBtn.addEventListener("click", function(){
+            avg = (sum/ myMap.size);
+            pass = (avg>=60) ? '합격':'불합격';
+            tot.innerText=`과목의 점수합계:${sum}, 평균:${avg.toFixed(2)}, 합격여부:${pass}`
+        })
+
+
+
+
+    </script>
+
+
+</body>
+</html>

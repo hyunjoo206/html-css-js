@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>과제</title>
+
+</head>
+<body>
+    <form action="">
+        이름 : <input type="text" id="name"> <br>
+        거주지 : <input type="text" id="addr"> <br>
+        좋아하는 리스트 <br>
+        리스트1 : <input type="text" id="favor1"> <br>
+        리스트2 : <input type="text" id="favor2"> <br>
+        리스트3 : <input type="text" id="favor3"> <br>
+        이메일 : <input type="text" id="email""> <br>
+        Pet 소유여부 : <input type="text" id="pet"> <br>
+        지금 가장 원하는 것 : <input type="want"> <br>
+        <button type="submit" id="sbmBtn">객체로 전송</button> <br><br>
+    </form>
+
+    <h3 id="result" style="display: inline;">전송받은 데이터 출력</h3>
+    <button type="button" id="printBtn">출력</button>
+
+    <table id="output" border="1">
+        <tr>
+            <td>이름</td>
+            <td id="output-name"></td>
+        </tr>
+        <tr>
+            <td>거주지</td>
+            <td id="output-addr"></td>
+        </tr>
+        <tr>
+            <td>좋아하는 리스트</td>
+            <td id="output-favor"></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td id="output-email"></td>
+        </tr>
+        <tr>
+            <td>Pet 소유여부</td>
+            <td id="output-pet"></td>
+        </tr>
+        <tr>
+            <td>이름</td>
+            <td id="output-name"></td>
+        </tr>
+        <tr>
+            <td>지금 가장 원한느 것</td>
+            <td id="output-want"></td>
+        </tr>
+    </table>
+        
+
+    <script>
+        let sbmBtn = document.getElementById('sbmBtn');
+        let printBtn = documnet.getElementById('printBtn');
+
+        const dataObj ={
+            name : "",
+            addr : "",
+            favors : {
+                favor1: "",
+                favor2: "",
+                favor3: "",
+            }, 
+            email:"",
+            pet:"",
+            want:"", 
+        };
+
+        //데이터를 객체로 저장
+        function print(){
+            let name = document.getElementById('name').value;
+            let addr = document.getElementById('addr').value;
+            let favor1 =document.getElementById('favor1').value;
+            let favor2 =document.getElementById('favor2').value;
+            let favor3 =document.getElementById('favor3').value;
+            let email =document.getElementById('email').value;
+            let pet =document.getElementById('pet').value;
+            let want =document.getElementById('want').value;
+
+            dataObj.name =name= favor1;
+            dataObj.addr = addr=favor2; 
+            dataObj.favors.favor3=favor3;
+
+
+            //화면에 출력
+            function printDatas(){
+                document.getElementById('output-name').innerText = dataObj.name;
+                document.getElementById('output-addr').innerText = dataObj.addr;
+                document.getElementById('output-email').innerText = dataObj.email;
+                document.getElementById('output-pet').innerText = dataObj.pet;
+                document.getElementById('output-want').innerText = dataObj.want;
+                document.getElementById('output-favor').innerText = dataObj.favor;
+
+                let str = `<li>${dataObj.favors.favor1}</li>`;
+                str += `<li>${dataObj.favors.favor2}</li>`;
+                str += `<li>${dataObj.favors.favor3}</li>`;
+                document.getElementById("")
+            }    
+
+             sbmBtn.addEventListener('click', function(e) {
+              e.preventDefault(); // submit 기본 동작 방지
+                print(); // 데이터 객체에 저장
+                });
+
+            printBtn.addEventListener('click', function() {
+                printDatas(); // 저장된 데이터 객체를 출력
+                });
+
+
+        }
+    </script>

@@ -1,0 +1,28 @@
+#footer {
+    background-color: #f8f8f8;
+    border-top: 1px solid #d9d9d9;
+}
+
+#footer_content {
+    width: 980px;
+    margin: 0 auto;
+}
+
+#policy_list {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 0;
+    font-size: 13px;
+}
+
+#policy_list a {
+    color: #666;
+}
+
+#company_info {
+    border-top: 1px solid #d9d9d9;
+    padding: 30px 0;
+    font-size: 13px;
+    color: #666;
+}
+

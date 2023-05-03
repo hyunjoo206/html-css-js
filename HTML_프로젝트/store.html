@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+	<link rel="stylesheet" href="./css/header.css">
+	<link rel="stylesheet" href="./css/nav.css">
+	<link rel="stylesheet" href="./css/store.css">
+	<link rel="stylesheet" href="./css/footer.css">
+    
+</head>
+<body>
+    <div id="header">
+        <div id="header_content">
+            <h1><a href="./index.html">영화예매</a></h1>
+            <ul>
+                <li>
+                    <a href="#">
+                        <img src="./img/loginPassword.png" alt=""> <br>
+                        <span>로그인</span>
+                    </a>
+                <li>
+                    <a href="#">
+                        <img src="./img/loginJoin.png" alt=""> <br>
+                        <span>회원가입</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/loginMember.png" alt=""> <br>
+                        <span>MY CGV</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="./img/loginCustomer.png" alt=""> <br>
+                        <span>고객센터</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="nav">
+        <div id="nav_content">
+            <ul>
+                <li>영화</li>
+                <li>극장</li>
+                <li>예매</li>
+                <li>스토어</li>
+                <li>이벤트</li>
+                <li>혜택</li>
+            </ul>
+            <div id="nav_search">
+                <input type="text" name="" id="">
+                <button type="button"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ----------------------EVENT PAGE-------------------------- -->
+
+    <div id="container">
+        
+        <!-- ad img -->
+        <div id="imgBox">
+            <img src="img/store/store_main.jpg" alt="" id="ad1">
+        </div>
+        
+        <!-- nav영역 -->
+        <div id="evt-nav">
+            <ul id="evt-menu">
+                <li><a href="">패키지</a></li>
+                <li><a href="">영화관람권</a></li>
+                <li><a href="">기프트카드</a></li>
+                <li><a href="">콤보</a></li>
+                <li><a href="">팝콘</a></li>                    
+                <li><a href="">음료</a></li>                    
+                <li><a href="">스낵</a></li>                    
+                <li><a href="">플레이존</a></li>                    
+                <li><a href="">상품권소개</a></li>                    
+            </ul>
+        </div>
+        
+        <div id="contents">
+            <div id="hotdeal_wrap">
+
+                <div id="sub_hr"></div>
+                <div id="sub_text_box">
+                    <div id="sub_text">
+                        <p id="nowhotdeal">지금 핫딜</p>
+                        <p>다음엔 절대 볼 수 없는 가격</p>
+                    </div>
+                </div>
+
+                <div id="hotdeal_content">
+                    <ul>
+                        <li>
+                            <a href="">
+                                <img src="img/store/comboEvt1.jpg" alt=""> <br>
+                                <span id="spanMain"><리바운드>전용권 2인 PKG</span> <br>
+                                <span id="discount">33%</span>
+                                <span id="price">20,000원</span>
+                                <span style="text-decoration: line-through">30,000원</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="img/store/comboEvt2.jpg" alt=""> <br>
+                                <span id="spanMain"><리바운드>전용권 3인 PKG</span> <br>
+                                <span id="discount">33%</span>
+                                <span id="price">20,000원</span>
+                                <span style="text-decoration: line-through">30,000원</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="img/store/comboEvt3.jpg" alt=""> <br>
+                                <span id="spanMain">우리 PKG</span> <br>
+                                <span id="discount">33%</span>
+                                <span id="price">20,000원</span>
+                                <span style="text-decoration: line-through">30,000원</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="hotdealBox">
+                    <div id="timeEvt1">
+                        <h1>Hot deal</h1>
+                        <h2 id="sample02"></h2>
+                    </div>
+                    <div id="timeEvt1">
+                        <h1>Hot deal</h1>
+                        <h2 id="sample03"></h2>
+                    </div>
+                    <div id="timeEvt1">
+                        <h1>Hot deal</h1>
+                        <h2 id="sample04"></h2>
+                    </div>
+                </div>
+
+            </div> <!-- hotdeal-wrap끝 -->
+
+            <div id="menu-wrap">
+                <div id="menu-left">
+                    <div id="menu-sort">
+                        <p>영화관람권</p>
+                        <img src="img/store/moreBtn.png" alt="">
+                    </div>
+                    <div id="menu-list">
+                        <ul>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/ticket1.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>CGV 골드클래스</p>
+                                        <p>최고의 관람환경을 제공하는 <br> 
+                                            프리미엄 상영관</p>
+                                        <h3>40,000원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/ticket2.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>CGV 영화관람권</p>
+                                        <p>즐거운 경험은 CGV에서!</p>
+                                        <h3>13,000원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/ticket3.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>4DX관람권</p>
+                                        <p>오감만족 영화 속 주인공 되기</p>
+                                        <h3>19,000원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="menu-right">
+                     <div id="menu-sort">
+                        <p>기프트카드</p>
+                        <img src="img/store/moreBtn.png" alt="">
+                    </div>
+                    <div id="menu-list">
+                        <ul>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/card1.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>PACONNIE A형</p>
+                                        <p>충전형 선불 카드</p>
+                                        <h3>금액충전형</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/card2.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>PACONNIE B형</p>
+                                        <p>충전형 선불 카드</p>
+                                        <h3>금액충전형</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/card3.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>PACONNIE C형</p>
+                                        <p>충전형 선불 카드</p>
+                                        <h3>금액충전형</h3>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 음료 -->
+            <div id="menu-wrap">
+                <div id="menu-left">
+                    <div id="menu-sort">
+                        <p>음료</p>
+                        <img src="img/store/moreBtn.png" alt="">
+                    </div>
+                    <div id="menu-list">
+                        <ul>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu1.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>탄산음료(M)</p>
+                                        <p>시원한 탄산음료와 함께 <br>
+                                            스트레스도 날리세요</p>
+                                        <h3>2,500원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu2.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>아메리카노(HOT)</p>
+                                        <p>현대인의 필수품</p>
+                                        <h3>3,500원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu3.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>아메리카노(ICE)</p>
+                                        <p>현대인의 필수품</p>
+                                        <h3>4,000원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="menu-right">
+                     <div id="menu-sort">
+                        <p>스낵</p>
+                        <img src="img/store/moreBtn.png" alt="">
+                    </div>
+                    <div id="menu-list">
+                        <ul>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu4.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>탄산음료(M)</p>
+                                        <p>시원한 탄산음료와 함께 <br> 스트레스도 날리세요</p>
+                                        <h3>2,500원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu5.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>아메리카노(HOT)</p>
+                                        <p>현대인의 필수품</p>
+                                        <h3>3,500원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                            <a href="">
+                                <li>
+                                    <img src="img/store/menu6.jpg" alt="">
+                                    <div id="menubox">
+                                        <p>아메리카노(ICE)</p>
+                                        <p>현대인의 필수품</p>
+                                        <h3>4,000원</h3>
+                                    </div>
+                                </li>
+                            </a>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        
+    </div>
+    
+
+    
+		<div id="footer">
+            <div id="footer_content">
+                <ul id="policy_list">
+                    <li><a href="#">회사소개</a></li>
+                    <li><a href="#">지속가능경영</a></li>
+                    <li><a href="#">IR</a></li>
+                    <li><a href="#">채용정보</a></li>
+                    <li><a href="#">광고/제휴/출점문의</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">편성기준</a></li>
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">법적고지</a></li>
+                    <li><a href="#">이메일주소무단수집거부</a></li>
+                    <li><a href="#">윤리경영</a></li>
+                    <li><a href="#">사이버감사실</a></li>
+                </ul>
+    
+                <ul id="company_info">
+                    <li>
+                        (주)이젠아카데미
+                    </li>
+                    <li>
+                        인천광역시 남동구 인주대로 593 엔타스 12층ㆍ대표자 : 고태곤
+                    </li>
+                    <li>
+                        사업자등록번호 : 265-92-00112ㆍ학원의 명칭 : 이젠아카데미컴퓨터학원
+                    </li>
+                    <li>
+                        학원설립/운영 등록번호 : 제 3652호
+                    </li>
+                    <li>
+                        통신판매업신고번호 : 제 2016-안양만안-0419 호ㆍ개인정보보호책임자 : 고필곤(reaver75@ezenac.co.kr)
+                    </li>
+                    <li>
+                        <strong>T. 032)719-4074</strong>ㆍ
+                        Copyright by EZEN. All rights reserved.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+
+    <!---------------------------------------- script ---------------------------------------------------->
+    <script>
+        const countDownTimer = function (id, date) {
+            let _vDate = new Date(date); // 전달 받은 일자
+            let _second = 1000;
+            let _minute = _second * 60;
+            let _hour = _minute * 60;
+            let _day = _hour * 24;
+            let timer;
+    
+            function showRemaining() {
+                let now = new Date();
+                let distDt = _vDate - now;
+    
+                if (distDt < 0) {
+                    clearInterval(timer);
+                    document.getElementById(id).textContent = '해당 이벤트가 종료 되었습니다!';
+                    return;
+                }
+    
+                let days = Math.floor(distDt / _day);
+                let hours = Math.floor((distDt % _day) / _hour);
+                let minutes = Math.floor((distDt % _hour) / _minute);
+                let seconds = Math.floor((distDt % _minute) / _second);
+    
+                //document.getElementById(id).textContent = date.toLocaleString() + "까지 : ";
+                document.getElementById(id).textContent = days + '일 ';
+                document.getElementById(id).textContent += hours + ':';
+                document.getElementById(id).textContent += minutes + ':';
+                document.getElementById(id).textContent += seconds ;
+            }
+    
+            timer = setInterval(showRemaining, 1000);
+        }
+    
+        let dateObj = new Date();
+        dateObj.setDate(dateObj.getDate() + 1);
+    
+
+        countDownTimer('sample02', '05/08/2023 00:50 AM'); // 2024년 4월 1일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
+        countDownTimer('sample03', '05/07/2023 06:30 AM'); // 2024년 4월 1일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
+        countDownTimer('sample04', '05/05/2023 08:20 AM'); // 2024년 4월 1일까지, 시간을 표시하려면 01:00 AM과 같은 형식을 사용한다.
+
+
+    </script>
+
+   
+
+</body>
+</html>

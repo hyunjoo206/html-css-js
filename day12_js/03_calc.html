@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>계산기</title>
+</head>
+<style>
+
+.topArea{ 
+    width: 200px;
+}
+button{
+    width: 50px;
+}
+button:last-child{
+    width: 105px;
+}
+.bottomArea{
+    width: 160px;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
+
+</style>
+<body>
+    <div class="container">
+        <div class="topArea">
+            <input class="calcInput" id="result">
+            <button type="button" value="1" >1</button>
+            <button type="button" value="2" >2</button>
+            <button type="button" value="3" >3</button>
+            <button type="button" value="4" >4</button>
+            <button type="button" value="5" >5</button>
+            <button type="button" value="6" >6</button>
+            <button type="button" value="7" >7</button>
+            <button type="button" value="8" >8</button>
+            <button type="button" value="9" >9</button>
+            <button type="button" value="0" >0</button>
+            <button type="button" value="." >.</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="-">-</button>
+            <button type="button" value="*">*</button>
+            <button type="button" value="/">/</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="C">C</button>
+        </div>
+    </div>
+    <script>
+
+
+        let fomulaValue ='';
+
+        function extractValue(strValue){
+
+        }
+        
+        //container를 클릭하면 
+        document.querySelector('.container').addEventListener('click',function(e){
+        
+            let btnValue = e.target.value;
+            console.log(btnValue);
+            console.log(typeof btnValue);
+
+            if(!isNaN(btnValue)){ //숫자일 때
+                fomulaValue += btnValue;
+            }else{ // 숫자가 아닐 경우
+                if(btnValue != undefined){ 
+                    switch(btnValue){
+                        case "C" : 
+                            fomulaValue = "";
+                            fomula.value = "";
+                            break;
+                        case "." : 
+                            fomulaValue += btnValue;
+                            break;
+                        default :
+                            let result ="";
+                            if(btnValue == "="){
+                                result = extractValue(fomulaValue);
+                                fomulaValue = result;
+                                btnValue = "";
+                            }
+                    }
+                    
+                    //값이 =이 아닌 (+,-,*,/)의 경우 
+                    fomulaValue += ` ${btnValue} `; //띄어쓰기해놓음 - 구분하려고(??) 
+
+                }
+            }
+
+        })
+
+    </script>
+</body>
+</html>

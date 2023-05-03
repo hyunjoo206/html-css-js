@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>history 객체</title>
+</head>
+<body>
+    <h1>
+        브라우저가 저장하고 있는 방문페이지의 기록을 관리하는 객체
+    </h1>
+    <ul>
+        <li>
+            <b> history.back() </b>: 이전 방문 페이지로 이동
+        </li>
+        <li>
+            <b>history.forword() </b>: 다음 방문한 페이지로 이동
+        </li>
+        <li>
+            <b>history.go(n)</b> : n번째 페이지로 이동 -2 : 이전페이지 2단계 전으로 
+        </li>
+        <li>
+            브라우저의 저장소를 기반으로 하기 때문에 보안이슈로 접근방어 해놓는 경우 작동하지 않을 수도 있다.
+        </li>
+    </ul>
+    <!-- 
+        a 태그를 이용하여 01_setTimeout.html로 이동 - 1번페이지
+        -> 2번페이지로 -> 3번 페이지로 -> 4번 페이지로 이동
+     -->
+     
+     <a href="01_setTimeout.html" >01_setTimeout.html이동</a>
+     <!-- 
+        button 3개 생성
+        back(), forword() 버튼 생성 후 클릭 시 history 객체 실행
+      -->
+     <button type="button" id="bBtn">back()</button>
+     <button type="button" id="fBtn">forword()</button>
+     <input type="text" id="'n">
+     <button type="button" id="gBtn">go(n)</button>
+     <script>
+        document.getElementById('bBtn').onclick=() =>{
+            history.back();
+        }
+        document.getElementById('fBtn').onclick=() =>{
+            history.forword();
+        }
+        document.getElementById('gBtn').onclick=() =>{
+            history.go(parseInt(documnet.getElementById('n').value));
+        }
+     </script>
+</body>
+</html>

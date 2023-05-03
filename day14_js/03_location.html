@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="04_history.html" >04_history.html</a>
+
+    <h1>
+        location 객체는 브라우저의 주소표시줄 입력에 관련된 객체
+    </h1>
+    <ul>
+        <li>
+            <b> location.href = 'url'; </b>: url로 이동
+        </li>
+        <li>
+            <b> location.replace('url') </b>: url로 이동 history 객체에 저장하지 않음
+        </li>
+        <li>
+            <b>location.assign()</b> : url로 이동, history 객체에 저장
+        </li>
+        <li>
+            <b>location.reload() </b> : 현재 페이지 새로고침
+        </li>
+    
+    </ul>
+    <button type="button" id="hrefBtn" onclick="hmove();">href 사용한 이동</button>
+    <button type="button" id="rpBtn" onclick="rpmove();">replace 사용한 이동</button>
+    <button type="button" id="aBtn" onclick="amove();">assign 사용한 이동</button>
+    <button type="button" id="rlBtn" onclick="rlmove();">reload 페이지 재호출</button>
+    
+    <script>
+        // function hmove(){
+        //     location.href = 'https://www.naver.com/';
+        // }
+        function rpmove(){
+            location.replace('https://www.naver.com/'); //뒤로가기 막힘
+        }
+        function amove(){
+            location.assign('https://www.naver.com/'); 
+        }
+        function rlmove(){
+            location.reload(); // 버튼누르면 새로고침버튼 깜빡임
+        }
+        
+        //id로 하는 방법
+        document.getElementById('hrefBtn').onclick= () =>{
+            location.href = 'https://www.naver.com/';
+        }
+
+
+    </script>
+</body>
+</html>

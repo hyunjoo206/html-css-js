@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배수출력하기</title>
+</head>
+<body>
+    <!-- 배수출력하기  -->
+    <h1>
+        배수출력하기(1~100까지 중 입력한 숫자의 배수)
+    </h1>
+    <input type="text" id="num">
+    <button type="button" id="btn" onclick="multiple(num)">배수 출력</button>
+    <h3 id="result">
+    배수값 출력 <br>
+    </h3>
+    <script>
+        
+        //  function multiple(){
+        //     let a = document.getElementById('num').value;
+        //     a= Number(a);
+
+        //     let i = 1;
+        //     let result = ""; //빈 문자열을 넣어줄 변수 result를 생성
+        //     for(i =1; i<=100; i++){ //i는 1부터 100보다 같거나 작을 때까지 1씩 증가
+        //         if(i%a == 0) //i를 입력한 숫자'a'로 나누었을 때 0이 되면
+        //         result += `${i} `; //result에 i를 계속 추가해서 더해라. => string으로 저장됨
+        //     }
+
+        //     document.getElementById('result').innerText =
+        //     `${a}의 배수: ${result}`
+
+        //  }
+
+        let r = document.getElementById('result').innerText;
+        console.log(r);
+
+        
+        function multiple(num){
+            console.log(num);
+            //배수 처리
+            let count = 0; //배수의 개수를 세기 위한 변수
+            let str =`${r} <br> ` ; //출력을 위한 문자열 변수
+            
+            for(let i=1; i<=100; i++){
+                if(i % num ==0){
+                    str += i+ " ";
+                    count ++;
+                    
+                }
+            }
+            
+            return `${str} 총${count}개`
+        }
+        
+        document.getElementById('btn').addEventListener('click',function(){
+            
+            //출력
+            
+            let num = Number(document.getElementById('num').value); //input의 value는 클릭 이벤트 안에 있어야 함
+            document.getElementById('result').innerHTML=multiple(num);
+        })
+
+
+
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>button</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        div{
+            position: relative;
+            width: 490px;
+            height: 45px;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.096);
+        }
+        input{
+            width: 450px;
+            height:45px;
+            border: 2px solid #19ce60;
+            border-radius: 2px 0 0 2px; /*주고 싶은 쪽만 주면 됨*/
+            box-sizing: border-box;
+            padding: 13px 15px;
+            position:absolute;
+            font-weight: 700;
+        }
+
+        input:focus{
+            outline: none; /*클릭 시에 검정으로 안 바뀌게*/
+        }
+
+        button{
+            line-height: 5px;
+            width: 45px;
+            height: 45px;
+            box-sizing: border-box;
+            background-color: #19ce60;
+            border: none;
+            position: absolute;
+            left:450px;
+            border-radius: 0 2px 2px 0; /*주고 싶은 쪽만 주면 됨*/
+        }
+
+        
+        .icon1{
+            position: absolute;
+            color: rgb(192, 192, 192);
+            left:380px;
+            padding: 12px 15px;
+            font-size: 20px;
+        }
+        
+        .icon2{
+            position: absolute;
+            color: #19ce60;
+            padding: 10px 8px;
+            left: 410px;
+        }
+        
+        .icon3{
+            font-size: 30px; /*아이콘은 font-size로 조정*/
+            color: white;
+        }
+
+        .material-symbols-outlined:nth-child(2):hover{
+            color: gray;
+        }
+
+        button:hover{
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <form action="" name="search">
+        <div class="outer">
+            <input type="text" name="search_text">
+            <span class="material-symbols-outlined icon1"> 
+                <!--가져온 span 이름 뒤에 띄고 새로운 이름 추가 가능-->
+                <!--style에서 쓸 때에는 뒤에 추가한 이름만 .icon1{ } 이렇게 사용-->
+                keyboard
+            </span>
+            <span class="material-symbols-outlined icon2">
+                arrow_drop_down
+            </span>
+            <button>
+                <span class="material-symbols-outlined icon3">
+                    search
+                </span>
+            </button>
+        </div>
+    </form>
+</body>
+</html>
+
+
+

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팝업창</title>
+</head>
+<body>
+    <h1>
+        Window 메서드 종류 
+    </h1>
+    <ul>
+        <li>
+            window.open('url','window name','option(size, scroll..)');
+        </li>
+        <li>
+            alert(), prompt(): input 받을 수 있는 창, confirm(): 확인/취소
+        </li>
+        <li>
+            setInterval(function, miliseconds);
+            일정 간격으로 지속적 실행문을 실행시킬 때 사용
+        </li>
+        <li>
+            setTimeout(function, miliseconds);
+            일정시간동안 실행시킬 때 사용
+        </li>
+    </ul>
+    <button type="button" onclick="openWindow();">열기</button>
+    <button type="button" onclick="closeWindow()">닫기</button>
+    <button type="button" onclick="myAlert();">alert</button>
+    <button type="button" onclick="myPrompt();">prompt</button>
+    <button type="button" onclick="myConfirm();">confirm</button>
+    <h3 id="msg"></h3>
+
+    <script>
+        let myWindow;
+        function openWindow(){
+            myWindow = window.open("", "mywindow", "width=400, height=500");
+        }
+
+        function closeWindow(){
+            if(myWindow){
+                myWindow.close();
+            }
+        }
+
+        function myAlert(){
+            alert('경고창입니다');
+        }
+
+        function myPrompt(){
+            let result = prompt("당신의 나이는?"); //보여주는 기능 + 받은 값을 result 변수에 저장하는 기능  
+            document.getElementById('msg').innerText = result;
+        }
+
+        function myConfirm(){
+            let result = confirm('삭제하시겠습니까?');
+            if(result == true){
+                document.getElementById('msg').innerText = '삭제되었습니다.';
+            }else{
+                document.getElementById('msg').innerText = '취소되었습니다.';                
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn2">Li Tag 순차적 추가하기</button>
+    <button type="button" id="btn3">Li Tag 한번에 추가하기</button>
+    <button type="button" id="btn4">Li Tag 순차적 추가하기</button>
+    <ul id="ul1"></ul>
+    <hr>
+    <ol id="ol1"></ol>
+    <hr>
+    <ul id="ul2"></ul>
+    <hr>
+    <ol id="ol2"></ol>
+    <hr>
+
+    <script>
+        //Li Tag 한 번에 추가하기
+        document.getElementById('btn1').addEventListener("click",()=>{
+            let ul1 = document.getElementById('ul1');
+            ul1.innerHTML =`
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>SQL</li>
+            `
+        })
+        //str 변수를 주고 거기에 +=로 계속 더해서 innerHTML로 넣어도 됨
+
+        
+        //Li Tag 순차적 추가하기
+        const txt = ["HTML", "CSS", "JavaScript", "SQL"] //배열생성
+        let indexNum = 0;
+        document.getElementById('btn2').addEventListener("click",()=>{
+            let ol1 = document.getElementById('ol1');
+            if(indexNum< txt.length){
+                ol1.innerHTML += `<li>${txt[indexNum]}</li>` // += 하지 않으면 누를 때마다 값이 바뀜
+                indexNum++;
+            }
+        })
+        
+        //Li Tag 한번에 추가하기 - appendChild 이용
+        document.getElementById('btn3').addEventListener("click",()=>{
+            let ul2 = document.getElementById('ul2');
+            ul2.innerHTML = ""; //기존 리스트 아이템 모두 제거
+            for(let i=0; i<txt.length; i++){ //txt.forEach((elem)=>{}로 해도 됨)
+                let li = document.createElement('li');
+                li.textContent = txt[i];
+                ul2.appendChild(li);
+            }
+        })
+
+        
+        //Li Tag 순차적 추가하기 - appendChild 이용     
+        
+        let indexNum2 = 0; 
+        document.getElementById('btn4').addEventListener("click", ()=>{
+            let ol2 = document.getElementById('ol2');
+            if(indexNum2< txt.length){
+                let li = document.createElement('li') // li태그 생성
+                li.textContent = txt[indexNum2]; // li태그 안에 txt[0]의 값 넣음
+                ol2.appendChild(li); // ol2에 <li>txt[0]</li>을 추가함
+                indexNum2++; 
+            }
+        })
+
+        //appendChild(누적기능o) 와 innerHTML의 차이는 += (전에 있던 거에 자동으로 더해짐)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input 파일에 파일명.확장자 입력하여 전송버튼을 누르면
+        이미지파일인지 검사하여 
+        이미지파일이면 '정상파일입니다'.
+        이미지파일이 아니면 '이미지파일만 가능합니다.'
+        라고 출력하기
+        이미지파일 : jpg, png, jpeg, gif
+     -->
+    파일명 : <input type="text" id="fileName">
+    <button type="button" id="submit" onclick="print()">전송</button>
+     <h3 id="imgPrint"></h3>
+
+     <script>
+
+            function print(){
+                let fileName = String(document.getElementById("fileName").value);
+                let result ='';
+                if(fileName.substring(fileName.indexOf(".")+1).toLowerCase() ===  'jpg' ||
+                    fileName.substring(fileName.indexOf(".")+1).toLowerCase() === 'png' ||
+                    fileName.substring(fileName.indexOf(".")+1).toLowerCase() === 'jpeg'||
+                    fileName.substring(fileName.indexOf(".")+1).toLowerCase() === 'gif'){
+                    result = '정상파일입니다';
+                 }else{
+                     result="이미지 파일만 가능합니다.";
+                }
+
+            //화면출력
+            let imgPrint = document.getElementById('imgPrint');
+            imgPrint.innerText = result;
+
+           }
+
+     </script>
+</body>
+</html>

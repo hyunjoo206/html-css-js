@@ -1,0 +1,246 @@
+
+
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+div{
+    width: 100%;
+}
+.header{
+    height: 60px;
+    background-color: rgb(100, 100, 100);
+    color: white;
+    font-size: 1.5em;
+    line-height: 60px;
+    vertical-align: middle;
+    padding-left: 40px;
+}
+/* media 쿼리를 이용해 바꿀 내용 여기서부터 시작~!! */
+.main-img{
+    height: 300px;
+    background-image: url(/img/computer.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+.description{
+    height: 300px;
+    background-color: white;
+    padding: 0 30px;
+    line-height: 300px;
+}
+.description>div{
+display: inline-block;
+line-height: normal;
+vertical-align: middle;
+}
+.description>div>p:first-child{
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: rgb(75, 75, 75);
+}
+.description>div>p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: black;
+}
+.description>div>p:last-child{
+    font-size: 16px;
+    color: darkgrey;
+}
+.sub-img1{
+    height: 350px;
+    background-image: url(/img/macbook.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.sub-img2{
+    height: 200px;
+    background-image: url(/img/keyboard.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    line-height: 200px;
+    text-align: center;
+    padding: 0;
+}
+.sub-img2>a{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    padding: 10px 40px;
+    border: 4px solid white;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration-line:none ;
+    color: white;
+    margin: 0;
+}
+.sub-img3{
+    height: 200px;
+    background-image: url(/img/mouse.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+@media screen and (min-width: 500px) {
+    .main-img{
+        height: 500px;
+        background-image: url(/img/computer.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    .description{
+        height: 300px;
+        background-color: white;
+        padding: 0 60px;
+        line-height: 300px;
+    }
+    .description>div{
+        display: inline-block;
+        line-height: normal;
+        vertical-align: middle;
+    }
+    .description>div>p:first-child{
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: rgb(75, 75, 75);
+    }
+    .description>div>p:nth-child(2){
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: black;
+    }
+    .description>div>p:last-child{
+        font-size: 16px;
+        color: darkgrey;
+    }
+    .sub-img1{
+        width: 50%;
+        height: 300px;
+        float: left;
+        background-image: url(/img/macbook.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    .sub-img2{
+        width: 50%;
+        height: 150px;
+        float: right;
+        background-image: url(/img/keyboard.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        line-height: 150px;
+        text-align: center;
+        padding: 0;
+    }
+    .sub-img2>a{
+        display: inline-block;
+        line-height: normal;
+        vertical-align: middle;
+        padding: 10px 40px;
+        border: 4px solid white;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration-line:none ;
+        color: white;
+        margin: 0;
+    }
+    .sub-img3{
+        width: 50%;
+        height: 150px;
+        float: right;
+        background-image: url(/img/mouse.jpg);
+        background-size: cover;
+        background-position: center center;
+    } 
+}
+@media screen and (min-width: 800px) {
+    .main-img{
+        float: left;
+        width: 50%;
+        height: 600px;
+        background-image: url(/img/computer.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+    .description{
+        width: 50%;
+        height: 300px;
+        float: right;
+        background-color: white;
+        padding: 0 30px;
+        line-height: 300px;
+    }
+    .description>div{
+    display: inline-block;
+    line-height: normal;
+    vertical-align: middle;
+    }
+    .description>div>p:first-child{
+        font-size: 16px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: rgb(75, 75, 75);
+    }
+    .description>div>p:nth-child(2){
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        color: black;
+    }
+    .description>div>p:last-child{
+        font-size: 16px;
+        color: darkgrey;
+    }
+    .sub-img1{
+        float: left;
+        width: 25%;
+        height: 300px;
+        background-image: url(/img/macbook.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+    }
+    .sub-img2{
+        float: right;
+        width: 25%;
+        height: 150px;
+        background-image: url(/img/keyboard.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        line-height: 150px;
+        text-align: center;
+        padding: 0;
+    }
+    .sub-img2>a{
+        display: inline-block;
+        line-height: normal;
+        vertical-align: middle;
+        padding: 10px 40px;
+        border: 4px solid white;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration-line:none ;
+        color: white;
+        margin: 0;
+    }
+    .sub-img3{
+        float: right;
+        width: 25%;
+        height: 150px;
+        background-image: url(/img/mouse.jpg);
+        background-size: cover;
+        background-position: center center;
+    }
+}

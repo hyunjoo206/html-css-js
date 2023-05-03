@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <section></section>
+
+    <script>
+        let header = document.querySelector('header');
+        let section = document.querySelector('section');
+        let str = '';
+
+        //홈페이지에서 json으로 가져오기
+        fetch(`https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json`)
+        .then(resp => resp.json())
+        .then(json => populateHeader(json));
+ 
+        // populateHeader() 함수 생성
+        function populateHeader(obj){
+            //document.createElement('h1').innerText = obj['squadName'] 이걸 세 줄로
+            let myH1 = document.createElement('h1'); //편히 쓰려고 만드는 거
+            myH1.innerText = obj['squadName'];
+            header.appendChild(myH1);
+            //appendChild는 있는 거에 추가해줌. +=의 기능을 갖고 있음
+
+            let myPara = document.createElement('p'); //p태그 생성해서 넣음
+            myPara.innerText = 'Hometown:'+obj['homeTown']  + '//Formed:' + obj['formed'] 
+                                //p태그 안에 키:값 형태로 넣기
+            header.appendChild(myPara); //uppendChild로 myPara에 추가
+            showHeroes(obj); 
+        }
+
+        //members 객체의 값을 가져오기 위한 함수
+        function showHeroes(obj){
+            let heroes = obj['members'];
+
+            for(let i=0; i<heroes.length; i++){
+                let myArticle = document.createElement('article');
+                let myH2 = documnet.createElement('h2');
+                let myPara1 = document.createElement('p');
+                let myPara2 = documnet.createElement('p');
+                let myPara3 = document.createElement('p');
+                let myList = document.createElement('ul');
+
+                myH2.innerText = heroes[i]
+            }
+        }
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* 그림자 넣기
+            box-shadow : 수평 / 수직 /번짐정도(선택)/ 그림자크기(선택)/ 색상/ 방향(선택)
+                - inset : 안쪽 방향으로
+            text-shadow : 수평 수직 번짐정도 색상
+
+        */
+        div{
+            width: 200px;
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+        p{
+            font-size: 30px;
+            font-weight: 700;
+        }
+
+        .shadow1{
+            text-shadow: 3px 0px 0px red;
+        }
+        .shadow2{
+            text-shadow: 3px 3px 0px red; 
+            /* 수직방향 추가 */
+        }
+        .shadow3{
+        text-shadow: 3px 3px 3px red; 
+            /* 번짐 추가 */
+        }
+        .shadow4{
+            text-shadow: 5px 5px 10px rgb(0, 162, 255);
+        }
+        .shadow5{}
+
+        .box1{
+            box-shadow: 5px 0px 0px 0px red;
+        }
+        .box2{
+            box-shadow: 0px 5px 0px 0px red;
+        }
+        .box3{
+            box-shadow: 5px 5px 0px 0px red, 5px 0px 5px rgb(255, 174, 0);
+        }
+        .box4{
+            box-shadow: 5px 5px 5px 0px red;
+        }
+        .box5{
+            box-shadow: 0px 3px 3px 3px red inset;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p class="shadow1">그림자 효과1</p>
+    <p class="shadow2">그림자 효과2</p>
+    <p class="shadow3">그림자 효과3</p>
+    <p class="shadow4">그림자 효과4</p>
+    <p class="shadow5">그림자 효과5</p>
+
+    <div class="box1">그림자 효과 1</div>
+    <div class="box2">그림자 효과 2</div>
+    <div class="box3">그림자 효과 3</div>
+    <div class="box4">그림자 효과 4</div>
+    <div class="box5">그림자 효과 5</div>
+</body>
+</html>

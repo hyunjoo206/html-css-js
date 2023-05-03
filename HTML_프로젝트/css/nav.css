@@ -1,0 +1,137 @@
+/* #nav {
+    border-bottom: 1px solid #fb4357;
+}
+
+#nav_content {
+    position: relative;
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+#nav_content ul {
+    display: flex;
+    align-items: center;
+}
+
+#nav_content li {
+    display: list-item;
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+#nav_content li:hover {
+    color: #fb4357;
+    cursor: pointer;
+}
+
+#nav_search {
+    display: inline-flex;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0 10px;
+}
+
+#nav_search::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 1px;
+    height: 25px;
+    background-color: gray;
+}
+
+#nav_search::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 1px;
+    height: 25px;
+    background-color: gray;
+}
+
+#nav_search #search_input {
+    background: none;
+    border: none;
+}
+
+#nav_search #search_btn {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: url(./img/search.png) center center/30px scroll no-repeat;
+} */
+
+#nav {
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #fb4357;
+    background-color: white;
+}
+
+#nav_content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 980px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#nav_content ul {
+    display: flex;
+    align-items: center;
+}
+
+#nav_content li {
+    margin-right: 30px;
+    font-weight: bold;
+}
+
+#nav_content li:hover {
+    color: #fb4357;
+    cursor: pointer;
+}
+
+#nav_search {
+    display: inline-flex;
+    position: absolute;
+    right: 0;
+    padding: 0 10px;
+}
+
+#nav_search::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 1px;
+    height: 25px;
+    background-color: gray;
+}
+
+#nav_search::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 3px;
+    width: 1px;
+    height: 25px;
+    background-color: gray;
+}
+
+#nav_search input {
+    background: none;
+    border: none;
+}
+
+#nav_search button {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: url(../img/search.png) center center/30px scroll no-repeat;
+}

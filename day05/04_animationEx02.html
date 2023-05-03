@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes ball{
+            from{
+                margin-bottom: 0%;
+            }
+            50%{
+                margin-bottom:20%;
+            }
+            to{
+                margin-bottom: 0%;
+            }
+        }
+
+        .ball-box{
+            position: absolute;
+            bottom: 0;
+            left:40%;
+            animation-name: ball;
+            animation-duration: 0.7s;
+            animation-iteration-count: infinite;
+        }
+
+        body{
+            background-image: url(/img/bg2.jpg);
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <div class="ball-box"><img src="/img/Basketball_Ball_Icon.png" alt="" width="100px" height="100px"></div>
+    </div>
+</body>
+</html>

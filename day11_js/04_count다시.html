@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="number">0</h1>
+    <div>
+        <button id="incre">+</button>
+        <button id="decre">-</button>
+    </div>
+    <script>
+        // let num = 0;
+        const number = document.getElementById('number');
+        const incre = document.getElementById('incre');
+        const decre = document.getElementById('decre');
+
+        incre.addEventListener('click', function(){
+            let currVal = Number(number.innerText);
+            number.innerText = currVal +1;
+        });
+        decre.addEventListener('click', function(){
+            let currVal = Number(number.innerText);
+            if(currVal <=0){
+                number.innerText =0;
+            }else{
+                number.innerText = currVal - 1;
+            }
+        });
+
+
+
+
+        // document.getElementById("incre").addEventListener("click", function(){
+        //     num++;
+        //     document.getElementById("number").innerText = num;
+        // })
+
+        // document.getElementById("decre").addEventListener("click", function(){
+        //     if(num<=0){
+        //         num;
+        //     }else{
+        //         num--;
+        //     }
+        //     document.getElementById("number").innerText = num;
+        // })
+    </script>
+</body>
+</html>

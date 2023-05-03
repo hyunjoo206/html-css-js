@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>정규표현식</title>
+</head>
+<body>
+    <h1>
+        정규식(regular Expression) : 문자열에서 특정 내용을 찾거나 대체, 발췌하는 데 사용
+    </h1>
+    <ul>
+        <li>
+            regex 단어로 많이 표현됨
+        </li>
+        <li>
+            특정 데이터를 탐색, 확인, 존재여부 등을 쉽게 확인하기 위한 규칙
+        </li>
+        <li>
+            웹 분야에서는 password 작성규칙, 첨부파일 ... 자주 쓰는 사용x
+        </li>
+        <li>
+            데이터 분석과 관련된 분야에서는 반드시 꼭 알고 있어야 함.
+        </li>
+        <li>
+            알고있으면 편리한 기능. 다른 언어에서도 거의 비슷한 형식이므로 한 번 학습해 놓으면 유용하게 사용
+        </li>
+        <li>
+            /regexr/i : (/ /) : 시작, 종료기호, (regexr) : pattern, (i) : flag
+        </li>
+        <li>
+            ("str").match(/regex/flag) : str에서 매칭되는 항목들을 배열로 반환
+        </li>
+        <li>
+            ("str").replace(/regex/, "바꿀문자열") : 
+            정규표현식에 매칭되는 항목을 바꿀문자열로 변환
+        </li>
+        <li>
+            ("str").split(/regexr/): 문자열을 정규표현식에 매칭되는 항목으로 쪼개어 배열로 반환
+        </li>
+        <li>
+            (정규표현식).test("str") : 문자열이 정규표현식 규칙에 맞으면 true, 아니면 false
+        </li>
+    </ul>
+    <ul>
+        <li>
+            정규표현식 플래그 
+        </li>
+        <li>
+            i : 대소문자 구분X
+        </li>
+        <li>
+            g : 전체검색
+        </li>
+        <li>
+            m : 행바꿈도 포함 (multi line)
+        </li>
+    </ul>
+    <ul>
+        <li>
+            a-zA-Z : 영어 알파벳 /ㄱ-ㅎ가-힣 : 한글/ 0-9 : 숫자
+        </li>
+        <li>
+            . : 모든 문자열 (숫자, 한글,영어, 특수기호, 공백 모두) 단, 줄바꿈은X
+        </li>
+        <li>
+            \d : 숫자            \D : 숫자 빼고
+            \s : 공백(space)     \S : 공백 아닌것
+            \w : 영숫자 _ 포함    \W : \w아닌것
+            \특수기호  : \! \@
+        </li>
+        <li>
+            검색 패턴 : | of a|b
+        </li>
+        <li>
+            [] : 괄호안의 문자들 중 하나  or 처리의 묶음으로 보면 됨
+            /abc/ => "abc"를 포함하는
+            /[abc]/ => "a" 또는 "b" 또는 "c"를 포함하는지
+            [다-바] => 다, 라, 마, 바 
+        </li>
+        <li>
+            [^문자] : 괄호 안의 문자를 제외한 것
+            [^abcd] : a,b,c,d빼고 나머지 포함
+        </li>
+        <li>
+            ^문자열$ : ^(시작) $(끝)
+        </li>
+    </ul>
+
+    <script>
+        let testText = "This is JavaScript Regular Expression";
+        //la가 포함되는 것을 나타내기
+        console.log(testText.match(/la/g));
+
+        const fileName = ['abc.jpg', 'main.gif', 'doc.pdf', 'movie.mpg', 'code.js'];
+        //배열을 탐색하여 하나의 문자열에 png, jpg, jpeg, gif인지 확인
+        for(const file of fileName){
+            if(file.match(/(jpg|jpeg|png|gif)/i)){
+                console.log(`이미지파일 : ${file}`)
+            }else{
+                console.log(`그 외 파일 : ${file}`);
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>구구단 영역(2*1=2 ~9*9=81)내에서 랜덤으로 문제를 내면 정답을 맞추는 로직</h2>
+    <h1>
+        <button type="button" id="startBtn" onclick="makeQuiz();">문제출제</button>
+    </h1>
+    <ol id="q"></ol>
+    <h1>
+        <button type="button" id="compareBtn" onclick="makeAnswer();">정답확인</button>
+    </h1>
+    <h3 id="printRatio"></h3>
+
+    <script>
+        // function makeRandomDan(){
+        //     return Math.floor(Math.random()*8)+2; //2~9단까지 생성
+        // }
+
+        // function makeRandomIncre(){
+        //     return Math.floor(Math.random()*9)+1; //1~9값을 랜덤 생성
+        // }
+
+        let count = 0; //count셀 변수 초기화
+        let quizArea = document.getElementById('q'); //문제출제 출력할 때 편히 쓰려고 만드는 거 
+        const ansObj = {}; //ansObj라는 빈 객체를 만들어서 초기화...? 어디에 쓰려고..? 정답을 담을 객체..?
+        // ex) 1번정답 : 5 이 형태로 넣으려고 객체 만들었음
+
+        // 문제를 출제하는 함수 생성
+        // <li>makeRandomDan * makeRandomIncre = 정답을 담을 input 박스</li>
+        // 위와 같은 걸 10개..? for문으로 생성
+        // ol 태그 안에 표시하기  -> li로 넣어야 함
+        
+
+        function makeQuiz (){
+            // let str ='';
+            for(let i=1; i<=10; i++){
+                let dan =  Math.floor(Math.random()*8)+2;
+                let incre = Math.floor(Math.random()*9)+1;
+                ansObj[i+'번 정답'] =dan * incre; //[키 이름 형태를 이렇게 정한 거임]
+                quizArea.innerHTML += `<li>${dan}*${incre} =<input type="text" id="user${i}"> </li>`;
+            }
+            console.log(ansObj);
+        }
+
+        // 정답을 맞추는 함수 생성
+        //  ansObj(객체)의 값과 내가 입력한 값을 비교하기
+        // 내가 입력한 값은 .value로 가져오기
+      
+        let correct=0; //정답 갯수 세기 위해서 
+        let count2=0;
+
+        function makeAnswer(){
+            for(let i=1; i<=10; i++){
+                count2++;
+                ansObj[i+'번 정답']
+                console.log(ansObj[i+'번 정답']) 
+                
+                if(ansObj[i+'번 정답'] == document.getElementById(`user${i}`).value ){
+                    document.getElementById(`user${i}`).value='정답';
+                    document.getElementById(`user${i}`).style.backgroundColor='green'; 
+                    //스크립트에서는 -를 없애고 대문자로 씀 backgound-color아니고 backgroundColor 
+                    correct++;
+                }else{
+                    document.getElementById(`user${i}`).value='오답';
+                    document.getElementById(`user${i}`).style.backgroundColor='red';
+                }
+            }
+            //정답률 나타내기
+            document.getElementById('printRatio').innerHTML =
+            `정답률 : ${(correct/count2).toFixed(2)*100}%`
+        }
+
+
+    </script>
+</body>
+</html>

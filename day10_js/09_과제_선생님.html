@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>
+    <button type="button" id="ranBtn" onclick="computerNum()">랜덤숫자 생성 버튼</button>
+    <button type="button" onclick="window.location.reload();">다시시도</button>
+</h1>
+<h3 id="printMsg"></h3>
+
+<h1>
+    <input type="number" id="myGuess" max="99" min="0">
+    <button type="button" id="guessBtn" onclick="compareNum2()">정답!</button>
+</h1>
+<h3 id="result"></h3>
+<script>
+    let comNum = 0; //아래에서 비교할 때 써야하니까 밖에서 선언!!
+    let count = 0; //횟수
+    function computerNum(){
+        comNum = Math.floor(Math.random()*50)+1
+        document.getElementById('printMsg').innerText =
+        `컴퓨터가 랜덤수(1~50)를 생성했습니다.`
+    }
+
+    function compareNum(){
+        let str = '';
+        console.log(comNum);
+        let myNum = Number(document.getElementById('myGuess').value); 
+        //입력받은 값을 Number 타입으로 변경 (parseInt로 해도 됨)
+        //함수 안이 아니면 value값이 가지지 않음
+        //전송 받는 값은 클릭이 유도되는 함수 안에 있어야 함 **
+        //숫자를 입력하면 count++
+        count++;
+        if(myNum >0 && myNum <50){
+            if(comNum == myNum){
+                str = `정답입니다. ${count}회, 컴퓨터 숫자는 ${comNum}였습니다.`;
+            }else if(comNum > myNum){
+                str = `시도횟수 ${count}, up!!`;
+            }else{
+                str = `시도횟수 ${count}, down!`;
+            }
+
+        }else{
+            str='1~50사이의 숫자만 가능합니다.'
+        }
+        document.getElementById('result').innerText =str;
+    }
+
+
+
+    //횟수제한  => 안됨 다시 해보기
+    function compareNum2(){
+        let str = ''; //변수선언
+        console.log(comNum); //콘솔 확인해보려고
+        let myNum = Number(document.getElementById('myGuess').value); 
+        if(count < 5){
+            count++;
+            if(myNum >0 && myNum <50){
+                if(comNum == myNum){
+                    str = `정답입니다. ${count}회, 컴퓨터 숫자는 ${comNum}였습니다.`;
+                }else if(comNum > myNum){
+                    str = `시도횟수 ${count}, up!!`;
+                }else{
+                    str = `시도횟수 ${count}, down!`;
+                }
+                
+        }else{
+            str='1~50사이의 숫자만 가능합니다.'
+        }
+        }else{
+            //횟수 초과 메시지 출력
+            str = `시도횟수 ${count}회가 초과되었습니다. 게임종료!!`;
+        }
+        document.getElementById('result').innerText =str;
+    }
+
+
+
+</script>
+</body>
+</html>

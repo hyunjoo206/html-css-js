@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수사용</title>
+    <!-- 
+        자바 스크립트 변수
+        값을 담고 있는 메모리 공간의 이름
+        자바 스크립트에서 변수는 선언(배정, 할당, 정의)하는 역할만 함
+        var, let(ES6부터는 let키워드를 사용하라고 적극 권장함)
+        const
+
+        - 범위제한없음
+        var name = "hong";
+        var name = "kim";
+
+        - 지역변수 개념 (중복불가)
+        let name = "hong";
+        - 변수의 값을 재할당 할 수 있다.
+        - 유효하지 않은 범위에서는 재선언도 가능
+        
+        const : 변수 재선언,재할당이 불가능
+        - 고정된 값을 사용한느 의미 규칙, 참조, 룰, 객체정의할 때 사용
+        - 선언한 이후 항상 고정값을 가지는 경우 사용
+
+     -->
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // var name="hong";
+        // console.log(name);
+        // var name="kim";
+        // console.log(name);
+
+        let name="hong2";
+        console.log(name);
+        name=123;
+        console.log(name);
+        console.log(typeof name);
+        
+
+        //선언하지 않고 변수를 사용하는 것도 가능
+        // 선언없이 변수를 할당하면 그 셥ㄴ수는 전영역에 영향을 미치므로 가급적 사용X
+        let age=20;
+        console.log(age);
+        let address="seoul";
+        let hobby="playbass";
+        console.log("이름: " + name);
+        console.log('나이:', age + "세"); //작은따옴표 써도 상관없음
+
+        // 벡틱 `` :  벡틱 내부에 코드 삽입 가능 ${}통해 삽입
+        console.log(`주소 : `,address);
+        console.log(`취미 : ${hobby}`);
+
+
+        //카멜표기법 사용
+        //숫자로 변수명 시작은 불가능
+        // const testName = "hong";
+        // console.log(testName);
+        // testname="kim";
+        // console.log(testname);
+        // 재할당 불가해서 오류남
+        
+
+        
+
+        
+
+
+    </script>
+</body>
+</html>

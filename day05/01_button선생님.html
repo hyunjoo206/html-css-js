@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>검색버튼</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <style>
+        .search-box{
+            display: inline-block;
+            box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.123);
+        }
+        
+        .search-left{
+            width: 330px;
+            height: 50px;
+            border: 2px solid #19ce60;
+            float: left;
+            position: relative;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .search_btn{
+            width: 54px;
+            height: 54px; /*border 위아래 1px 더하니까 52px*/
+            background-color: #19ce60;
+            border: none;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+
+        .search-left>input{
+            width: 240px;
+            height: 30px;
+            position: absolute;
+            top:7px;
+            left: 10px;
+            border: none;
+            outline: none;
+            font-weight: 700;
+        }
+
+        .keyboard-icon, .arrow-icon {
+            position: absolute;
+            top:25%;
+            left: 270px;
+            color: gray;
+        }
+
+        .arrow-icon{
+            left : 300px;
+            color: #19ce60;
+        }
+
+        .search-icon{
+            color: white;
+            font-size: 30px;
+            padding-top: 5px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <form action="">
+        <div class="search-box"> <!--대부분 굳이 부모에 값을 주지 않음. 자식에 의해 자동으로 늘어남-->
+            <div class="search-left"> 
+                <input type="text" name="search">
+                <a href="">
+                    <span class="material-symbols-outlined keyboard-icon"> 
+                        keyboard
+                    </span>
+                </a>
+                <span class="material-symbols-outlined arrow-icon">
+                    arrow_drop_down
+                </span>
+            </div>
+            <button type="submit" class="search_btn">
+                <span class="material-symbols-outlined search-icon">
+                    search
+                </span>
+            </button>
+        </div>
+    </form>
+</body>
+</html>

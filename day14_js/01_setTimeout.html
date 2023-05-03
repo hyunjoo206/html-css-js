@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout</title>
+</head>
+<body>
+    <a href="02_setInterval.html" >02_setInterval.html</a>
+    <h1>
+        setTimeout(callback function, duration);
+        duration 시간 후에 callback function을 실행 <br>
+        setTimeout을 할당한 객체를 clearTimeout(할당한 객체)으로 취소가능
+        1/1000 => 1초 = > 1000
+    </h1>
+
+    <button type="button" id="start">시작</button>
+    <button type="button" id="finish">끝</button>
+    <h1 id="result">
+        3초 후에 글자가 나타납니다
+    </h1>
+
+    <script>
+        let timeObj; //객체지정하는 이유 : 취소해보기 위해서 
+
+        document.getElementById('start').addEventListener('click',()=>{
+            timeObj = setTimeout(myfunction, 3000); // timeObj에 setTimeout 설정
+        })
+
+        document.getElementById('finish').onclick = () =>{
+            clearTimeout(timeObj); //지우는 건 잘 안씀
+        }
+
+        function myfunction(){
+            //result의 innertext가 다른 글자로 바뀌도록
+            document.getElementById('result').innerText = '짠';
+        }
+
+
+
+    </script>
+</body>
+</html>

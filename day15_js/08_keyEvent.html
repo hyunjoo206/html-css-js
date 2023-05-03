@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        가끔 키보드에서 입력받는 값을 알아야 할 필요가 있음
+    </h1>
+    <ul>
+        <li>
+            키를 누르고 있는 동안 : keydown
+        </li>
+        <li>
+            키를 누르는 순간 : keypress
+        </li>
+        <li>
+            키가 다시 올라오는 순간 : keyup
+        </li>
+        <li>
+            키 값 : event.key, event.code
+        </li>
+    </ul>
+    <h1>
+        e.type : <span id="type1"></span>, &nbsp; 
+        e.key : <span id="key1"></span>, &nbsp;
+        e.code : <span id="code1"></span>
+    </h1>
+    <h1>
+        e.type : <span id="type2"></span>, &nbsp; 
+        e.key : <span id="key2"></span>, &nbsp;
+        e.code : <span id="code2"></span>
+    </h1>
+    <h1>
+        e.type : <span id="type3"></span>, &nbsp; 
+        e.key : <span id="key3"></span>, &nbsp;
+        e.code : <span id="code3"></span>
+    </h1>
+    입력값 : <input type="text" id="str">
+
+    <script>
+        const h1_type1 = document.getElementById('type1');
+        const h1_key1 = document.getElementById('key1');
+        const h1_code1 = document.getElementById('code1');
+        const h1_type2 = document.getElementById('type2');
+        const h1_key2 = document.getElementById('key2');
+        const h1_code2 = document.getElementById('code2');
+        const h1_type3 = document.getElementById('type3');
+        const h1_key3 = document.getElementById('key3');
+        const h1_code3 = document.getElementById('code3');
+
+        document.getElementById('str').addEventListener('keydown',(e)=>{
+            console.log(e.key)
+            h1_type1.textContent = e.type;
+            h1_key1.textContent = e.key;
+            h1_code1.textContent = e.code;
+        })
+        document.getElementById('str').addEventListener('keypress',(e)=>{
+            h1_type2.textContent = e.type;
+            h1_key2.textContent = e.key;
+            h1_code2.textContent = e.code;           
+        })
+        document.getElementById('str').addEventListener('keyup',(e)=>{
+            h1_type3.textContent = e.type;
+            h1_key3.textContent = e.key;
+            h1_code3.textContent = e.code;
+        })
+
+
+
+    </script>
+</body>
+</html>

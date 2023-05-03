@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bgBox, .whiteBox{
+
+            /* position 값을 absolute로 위치지정 */
+            position: absolute;
+
+            /* 화면을 꽉 채우기 위해서 */
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .bgBox{
+            width: 100%;
+            height: 100%;
+
+            background-image: url(/img/interior.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            z-index: 100;
+
+            animation-name : disappear;
+            animation-duration: 5s;
+        }
+
+        .whiteBox{
+            width: 100%;
+            height: 100%;
+            /* opacity: 0.5; */
+            background-color: white;
+        }
+
+        /* 사라지게 하는 애니메이션 - 투명도 조절 1(그림100%)->0(그림투명도0%)->1(그림100%)*/
+        @keyframes disappear{
+            0%{
+                opacity: 1; 
+            }
+            50%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="bgBox"></div>
+    <div class="whiteBox"></div>
+
+</body>
+</html>

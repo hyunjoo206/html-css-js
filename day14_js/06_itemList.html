@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습</title>
+    <style>
+
+        #wrap{
+            text-align: center; 
+            /* 바깥div에는 text-align : center */
+        }
+
+        input{
+            width: 300px;
+            height: 30px;
+            margin-top: 30px;
+        }
+        
+        button{
+            width: 80px;
+            height: 37px;
+            margin-top: 30px;
+            
+        }
+        
+        #itemList1{
+            display: inline-block;
+            /* 내부 div에 inline-block을 줘야 가운데에 위치 */
+
+            background-color: turquoise;
+            width: 600px;
+            height: 100px;
+
+        }
+
+        ul{
+            padding-left: 0;
+            margin: 0;
+        }
+
+        li{
+            display: inline-block;
+            list-style: none;
+           background-color: rgb(218, 218, 218); 
+           width: 600px;
+           height: 50px;
+           text-align: left;
+           line-height: 50px;
+           box-sizing: border-box;
+           padding-left: 40px;
+        }
+
+        li:nth-child(even){
+            background-color: rgb(194, 194, 194);
+        }
+
+        span{
+            float: right;
+            padding-right: 40px;
+            cursor: pointer;
+        }
+
+        span:hover{
+            color: rgb(255, 255, 255);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>여행 준비물 점검 목록</h1>
+        <div id="container">
+            <div id="itemList1">
+                <input type="text" id="item" autofocus="true">
+                <button type="button" onclick="printWord()">추가</button>
+            </div>
+            <div >
+                <ul id="itemList">
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // input박스에 입력후 추가버튼을 누르면 ul태그 안에 li로 추가.
+        // <li>입력문자</li> 
+        // input박스 아래로 글자가 계속 쌓이도록 나타내기
+        //  글자 + X 표시
+
+        function printWord(){ //
+            let getWord = document.getElementById('item').value
+            document.getElementById('item').value = ""; //인풋박스 값을 비워주고
+            document.getElementById('item').focus(); // focus되도록 (커서 깜빡)
+            console.log(getWord);                            
+                document.getElementById('itemList').innerHTML += `<li>${getWord}<span class="remove" onclick="removeWord(this)">X</span></li>`;               
+        }   
+
+        //x를 누르면 해당 li가 제거되도록 하는 함수
+        function removeWord(elem){
+            elem.parentNode.remove(); //부모노드를 제거
+        }
+        
+    </script>
+</body>
+
+</html>

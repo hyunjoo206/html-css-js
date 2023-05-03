@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테두리 속성</title>
+    <style>
+        /* 
+            <크기 속성>
+            - width : 가로 길이
+                - block 태그의 기본 가로는 100%로 설정되어 있음
+                    - 부모 크기의 100% 
+                - min-width : 최소 가로 길이 지정 (이거보다 더 작으면 안 줄일래~~)
+                - max-width : 최대 가로 길이 지정
+
+                - inline 태그의 가로 길이는 컨텐츠의 길이로 설정(변경불가) => 의미없음
+        
+            - height : 세로 길이
+                - 컨텐츠가 없으면 0, 있으면 컨텐츠의 높이만큼 자동할당
+
+        */
+
+        /* div{
+            width: 100px;
+        } */
+        
+        /*
+        border-style(border -?? - style) : 테두리 선 모양
+        border-width(border -?? - width) : 테두리 두께
+        border-color(border -?? - color) : 테두리 색상
+        border-radius(border -?? - radius) : 테두리 둥글게
+         */
+
+
+        p{
+            max-width: 500px;
+            min-width: 300px;
+        }
+
+        /* div 높이가 0이라서 배경색 안 나옴. 대신 선은 나옴. */
+        #b1{
+            border: 1px solid black;
+            background-color: antiquewhite;
+            height: 200px;
+            width: 200px;
+            border-radius: 20px;
+            border-top-left-radius: 100px;
+            /* border는 사면을 다 다르게 줄 수 있음 */
+        }
+        #b2{
+            border: 1px solid black;
+            background-color: antiquewhite;
+            height: 200px;
+            width: 200px;
+            border-radius: 100px;
+            /* border는 사면을 다 다르게 줄 수 있음 */
+        }
+
+        /* 
+        연습문제
+        가로 세로 200px인 box를 생성하여 
+        테두리가 실선이고 두께가 2, 색상은 파란선 색으로 생성
+        */
+
+        #box1{
+            width: 200px;
+            height: 200px;
+            border : 2px solid blue;
+        }
+
+        #box2{
+            width: 200px;
+            height: 200px;
+            border: 2px dashed skyblue;
+            border-radius: 20px;
+            background : linear-gradient(to bottom right, #dcffaa, #fff9a3);
+            text-align: center;
+            margin: 0 auto; 
+            line-height: 200px;
+              
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <!-- <div> 
+        <p>박스안의 홍길동입니다. 홍길동입니다.</p>
+    </div> -->
+
+    <p>
+        안녕하세요 홍길동입니다. 안녕하세요 홍길동입니다.
+    </p>
+
+    <div id="b1"></div> <br>
+    <div id="b2"></div> <br>
+
+    <hr>
+    <p>연습문제 <br>
+        가로 세로 200px인 box를 생성하여 
+        테두리가 실선이고 두께가 2, 색상은 파란선 색으로 생성 </p>
+
+    <!-- 연습문제 -->
+    <div id="box1"></div> <br>
+    <div id="box2">gradient</div>
+
+</body>
+</html>

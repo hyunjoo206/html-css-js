@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise chain 방식</title>
+</head>
+<body>
+    <h1>
+        Promise 객체를 리턴하는 함수를 호출하는 함수
+        then 메서드를 사용하여 실행순서를 기다리게 할 수 있다.
+    </h1>
+    <ul>
+        <li>
+           <b> fetch 함수 </b>: 데이터 통신을 위해 제공되는 함수
+            첫 파라미터는 URL, 두 번째 파라미터 header에 적용될 객체
+        </li>
+        <li>
+        <b>then 메서드 </b>: promise 객체를 리턴하는 함수 및 메서드를 기다려서
+            다음 순서의 로직을 수행하기 위한 연결기능을 한다.
+        </li>
+        <li></li>    
+    </ul>
+    <button type="button" id="btn">데이터 가져오기</button>
+    <ul id="ul"></ul>
+    <script>
+
+        //1번부터 5번데이터까지 화면에 찍기
+        // for(let i=1; i<=5; i++){
+        //     let page = `https://jsonplaceholder.typicode.com/todos/${i}`
+        // }
+
+        document.getElementById('btn').addEventListener('click',()=>{
+            document.getElementById('ul').innerHTML = "";
+            for(let i=1; i<=5; i++){
+                fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
+                .then(resp => resp.json()) //앞에 resp은 파라미터 변수 이름. 맘대로 지어도 ㅇㅋ/ .text해도됨
+                // .then(json => console.log(json));
+                .then(json => printData(json)) // 앞에 json은 파라미터 변수 이름.
+                .catch(err => console.log(err)) // catch는 실패 시 then은 성공 시
+            } 
+        })
+
+        // fetch().then(resp => resp.json())
+        // .then(json => console.log(json))
+        // .catch(err=>console.log(err))
+
+
+
+        //resp 객체의 json 값을 화면에 <li>키 : 값</li>으로 나타내기
+        // 1. function 만들기
+        
+        // function printData(obj){
+        //     for(const key in obj){
+        //         document.getElementById('ul').innerHTML += `<li> ${key} : ${obj[key]}</li>`
+        //     }
+        // }
+
+        //선생님이 하신 방법 변수 만들어서 .. 위에랑 똑같은 거임
+        let str =''; 
+        function printData(obj){
+            // console.log(obj);
+            let ul = document.getElementById('ul');
+            for(const key in obj){
+                str += `<li>${key}:${obj[key]}</li>`
+            }
+            ul.innerHTML = str;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button type="button" id="startBtn">문제출제</button>
+    </h1>
+    <ol id ="q"></ol> <!-- 문제출제 버튼 누르면 화면에 나올 ol태그 -->
+    <h1>
+        <button type="button" id="compareBtn">정답확인</button>
+    </h1>
+    <h3 id="printRatio"></h3> <!--정답확인 버튼 누르면 정답률 나타낼 h3태그-->
+
+    <script>
+        // 문제 출제하는 함수 -> 안에서 답을 바로 구해놔야 함
+        
+
+        // ol태그 안에 <li> 난수(2~9) * 난수(1~9) = input박스 </li> 
+        
+        let dan = Math.floor(Math.random()*8)+2 //8인이유는 개수임!!! 9 아님!! 주의
+        let incre = Math.floor(Math.random()*9)+1
+
+        `<li>${dan}*${incre}=<input type="text"></li>`
+        //이거를 클릭하면 화면에 표시해야 함
+
+        document.getElementById('q')
+
+
+    </script>
+
+</body>
+</html>

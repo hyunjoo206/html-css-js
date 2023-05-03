@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 속성</title>
+    <!--  
+        transform : 회전, 이동, 확대 등을 할 떄 사용
+            - translate(x,y) : x축으로 x만큼, y축으로 y만큼 이동
+            - translate(x) : x축만 이동
+            - translate(y) : y축만 이동
+            - scale(w,h) : 가로로 w배, 세로로 h배만큼 커짐, 값을 0으로 하면 안보임
+            - scaleX(w) : 가로만 확대
+            - scaleY(h) : 세로만 확대
+            - rotate(a) : 시계방향 회전 a각도만큼 회전 / 단위:deg
+            - skeX(xa) : x축으로 xa만큼 기울임 / 단위:deg
+            - skewY(ya) : y축으로 ya만큼 기울임
+
+    -->
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: salmon;
+            border-radius: 100px;
+
+            animation: translate 3s 3;
+        }
+
+        .box2{
+            
+            width: 100px;
+            height: 100px;
+            background-color: rgb(250, 225, 114);
+            animation: scale 3s 3;
+        }
+        .box3{
+            width: 200px;
+            height: 50px;
+            background-color: rgb(202, 250, 114);
+            border-radius: 50px;
+
+            animation: skew 3s 3;
+        }
+        .box4{
+            width: 80px;
+            height: 150px;
+            background-color: rgb(114, 211, 250);
+
+            animation: rotate 1s 6;
+        }
+
+
+        
+
+        @keyframes translate{
+            0%{transform: translate(0,0);}
+            50%{transform: translate(50px,50px);}
+            100%{transform: translate(0,0);}
+
+        }
+
+        @keyframes scale{
+            0%{transform: scale(1,1);}
+            50%{transform: scale(1.5,1.5);}
+            100%{transform: scale(1,1);}
+        }
+
+        @keyframes rotate{
+            0%{transform: rotate(0deg);}
+            50%{transform: rotate(180deg);}
+            0%{transform: rotate(360deg);}
+        }
+
+        @keyframes skew{
+            0%{transform: skew(0deg, 0deg);}
+            50%{transform: skew(30deg, 30deg);}
+            10%{transform: skew(0deg, 0deg);}
+        }
+
+        /* 
+            transition 
+            - 다른 속성값이 변화할 때 서서히 변화하여 애니메이션 효과가 
+            발생하는 것처럼 보이게 함.
+            - transition 속성명 전환시간;
+            - 속성이 전환시간동안 서서히 변화
+         */
+
+         .font{
+            width: 60px;
+            height: 30px;
+            background-color: pink;
+            font-size: 50px;
+            transition: font-size 0.5s;
+         }
+
+         .font:hover{
+            font-size: 80px;
+            color: rgb(139, 139, 139);
+         }
+
+                                         
+        
+    </style>
+</head>
+<body>
+    <div class="box"></div> <br><br>
+    <div class="box2"></div> <br><br>
+    <div class="box3"></div> <br><br>
+    <div class="box4"></div> <br><br>
+    <div class="font">hello</div>
+    
+</body>
+</html>

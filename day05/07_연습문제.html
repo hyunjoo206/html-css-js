@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+
+        .container{
+            margin: 0 auto;
+            margin-top: 20%;
+            border-radius: 10px;
+            width: 400px;
+            height: 300px;
+            background-color: rgb(236, 236, 236);
+            box-shadow: 1px 1px 30px 1px rgba(0, 0, 0, 0.377);
+
+        }
+
+        input{
+            width: 300px;
+            height: 20px;
+            padding: 3%;
+            margin-bottom:3%;
+            margin-left: 9%;
+            border: none;
+            outline: none;
+            font-size: 15px;
+        }
+        input:first-child{
+            margin-top: 10%;       
+        }
+
+        button{
+            width: 325px;
+            height: 50px;
+            padding: 3%;
+            margin-bottom:4%;
+            margin-left: 9%;
+            background-color: darkcyan;
+            border: none;
+            color: white;
+            font-size: 15px;
+            border-radius: 10px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background-color: rgb(30, 99, 99);
+        }
+
+        p{
+            text-align: center;
+            margin-top: 6%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" name="login">
+            <input type="text" placeholder="아이디" name="id"> <br>
+            <input type="password" placeholder="비밀번호" name="pw"> <br>
+            <button type="submit">로그인</button>
+        </form>
+        <a href=""><p>비밀번호를 잊어버리셨나요?</p></a>
+
+    </div>
+</body>
+</html>

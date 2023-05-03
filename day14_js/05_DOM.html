@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <h1 id="h1">
+        DOM(Document Object Model) : 문서(html)객체 모델
+    </h1>
+    <ul>
+        <li class+li+>
+            '<html></html>' 하위 태그는 각각의 기능(Method), 속성(properties)를 갖고 있는 문서객체이다.
+        </li>
+        <li>
+            엘리먼츠 가져오기 : tag element로 가져오는 메서드 byId, byClassNane, byTagName 
+        </li>
+        <li>
+            document.getElementById('idName') : 단일 엘리먼츠 선언
+        </li>
+        <li>
+            document.getElementByClassName('className') : 복수 엘리먼츠 리턴 
+            복수 엘리먼츠 리턴 => HTMLCollection 타입으로 리턴
+        </li>
+        <li>
+            document.getElementByClassName('tagName') : 복수 엘리먼츠 리턴
+            => HTMLCollection 타입으로 처리
+        </li>
+
+        <li>
+            getElements로 가져오는 객체는 우선적으로  HTMLCollection의 인덱스를 선택해야 함
+        </li>
+        <li></li>
+        <script>
+            const h1 = document.getElementById('h1');
+            const list = document.getElementsByClassName('list');
+            const ul = document.getElementsByTagName('ul');
+            console.log(h1)
+            console.log(list[1])
+            console.log(ul[0].children.length)
+            // console.log(ul.children.length)
+        </script>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    .topArea{ 
+        width: 200px;
+    }
+    button{
+        width: 50px;
+    }
+    button:last-child{
+        width: 105px;
+    }
+    .bottomArea{
+        width: 160px;
+        height: 30px;
+        border: 1px solid black;
+        border-radius: 5px;
+    
+    }
+    
+    </style>
+    <body>
+        <div class="container">
+            <div class="topArea">
+                <input class="calcInput" id="result">
+                <button type="button" value="1" onclick="btn_click(1)">1</button>
+                <button type="button" value="2" onclick="btn_click(2)">2</button>
+                <button type="button" value="3" onclick="btn_click(3)">3</button>
+                <button type="button" value="4" onclick="btn_click(4)">4</button>
+                <button type="button" value="5" onclick="btn_click(5)">5</button>
+                <button type="button" value="6" onclick="btn_click(6)">6</button>
+                <button type="button" value="7" onclick="btn_click(7)">7</button>
+                <button type="button" value="8" onclick="btn_click(8)">8</button>
+                <button type="button" value="9" onclick="btn_click(9)">9</button>
+                <button type="button" value="0" onclick="btn_click(0)">0</button>
+                <button type="button" value="." onclick="btn_click('.')">.</button>
+                <button type="button" value="+" onclick="cal('+')">+</button>
+                <button type="button" value="-" onclick="cal('-')">-</button>
+                <button type="button" value="*" onclick="cal('*')">*</button>
+                <button type="button" value="/" onclick="cal('/')">/</button>
+                <button type="button" value="=" onclick="compute()">=</button>
+                <button type="button" value="C" onclick="clear_del()">C</button>
+            </div>
+        </div>
+        <script>
+            let num = 0; // num을 0값으로 초기화
+            let symbol;  //symbol 선언
+
+            function btn_click(a){ //a를 매개변수로 받는 함수 -> a넣으면 a넣게.
+                result.value += a;
+            }
+
+
+        </script>
+    </body>
+    </html>

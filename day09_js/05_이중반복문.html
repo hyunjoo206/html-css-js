@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>nested_while</title>
+    <style>
+        table>tbody>tr>td{
+            width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        이중 반복문 : outer while ->기준, inner while -> 계속반복
+    </h1>
+    <ul>
+        <li>outer while 1~3까지 3번 반복</li>
+        <li>
+            inner while 1~5까지 5번 반복
+        </li>
+        <li>
+            outer while : 1, inner while : 1~5 반복
+            outer while : 2, inner while : 1~5 반복
+            outer while : 3, inner while : 1~5 반복
+        </li>
+    </ul>
+    <h1>
+        (구구단) 2~9단까지 구구단 출력하기
+    </h1>
+    <button type="button"  onclick="calc()">구구단 출력</button>
+    <button type="button"  onclick="calc2()">구구단 출력2</button>
+    <div id="gugu">
+
+        <!-- 2×1=2 3×1=3 4×1=4 ........ 9×1=9
+             2×4=4 ....
+             .
+             .
+             .
+             2×9=19 ................... 9×9=81
+        -->
+
+        <!-- div 태그 안에 table을 만들어서 넣기 -->
+        <table id="gugu2" ></table>
+        <table id="gugu3" border="1"></table>
+
+     <script>
+        function calc(){ 
+            let a = 2; 
+            let b = 1;
+            let result =1; // 결과값을 담을 변수를 초기화
+            let str ="";
+
+            while(a<=9){ 
+                str += `<tr>`; // 아무것도 없는 str에 계속 다시 넣는 거니까 +=를 해야 함.
+                    //str = str + `<tr>`이고, 아래에 while문도 계속 담기는 것
+                while(b<=9){
+                    result = a*b 
+                    str += `<td>${a} x ${b} = ${result}</td>`
+                    b++; 
+                }
+                str += `</tr>`;
+                b=1;
+                a++;
+            }
+
+            //화면 출력
+            document.getElementById('gugu2').innerHTML =
+            str
+        }
+
+        function calc2(){
+            let i = 2;
+            let j = 1;
+            let result2 = 1;
+            let str2 = "";
+
+            while(i<=9){
+                str2 +=`<tr>`;
+                while(j<=9){
+                    result2 = i*j;
+                    str2 += `<td>${i}*${j}=${result2}</td>`
+                    j++ ;
+                }
+                str2 +=`</tr>`;
+                j=1;
+                i++;
+            }
+
+            //화면출력
+            console.log(str2);
+            document.getElementById('gugu3').innerHTML= 
+            str2
+
+        }
+
+        //선생님이 하신 방법도 해보기...
+        // document.getElementById('guguBtn').addEventListener('click',()=>{
+        //     let str3 = `<table border = 1>`;
+        //     let incre = 1;
+        //     while (incre < 10){
+        //         let dan = 2;
+        //         str3 += `<tr>`;
+        //         while(dan<10){
+        //             str3 += `<td>${dan}×${incre}=${dan*incre}</td>`
+        //             dan++;
+        //         }
+        //         incre++;
+        //         str3 += `</tr>`;
+        //     }
+
+        // })
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자 함수</title>
+</head>
+<body>
+    <h1>
+        클래스, 리터럴 객체, 생성자 함수를 통해 객체 생성
+    </h1>
+    <!-- 클래스 생성의 기본 문법
+        클래스명 대문자로 쓰는 것이 일반적
+        class MyClass {
+            //생성자
+            constructor(){
+                ...
+            }
+            //메서드 정의
+            method01(){...}
+            method02(){...}
+            method03(){...}
+        }
+
+        //클래스 사용
+        let user = New MyClass(parameter);
+
+        //getter/setter
+        get name(){
+            return this.name
+        }
+
+        set name(value){
+            if(value.length < 4){
+                alert('길이가 4글자 이상이어야 합니다.')
+                return;
+            }
+            this.name = value;
+        }
+
+    -->
+
+    <!-- 
+        생성자 함수는 클래스의 함수화
+        일반 함수와 생성자 함수는 기술적 차이는 없음
+        1. 반드시 new를 통해 실행
+        2. 함수 첫글자는 대문자로
+
+        function User(name){
+            this.name = name;
+            this.age = 0;
+        }
+
+        let user = new User('영이')
+        console.log(user.name);
+        user.age = 20;
+        console.log(user.age);
+    -->
+    
+    <script>
+        // 클래스, 리터럴 객체(비어있는 객체), 생성자 함수
+        // 정의할 프로퍼티(멤버변수) : firstName, lastName, age, address
+        // 메서드(자바에서의 toString같은 개념의 함수)- 멤버변수의 값을 동시에 리턴
+
+        class Human{
+            constructor(firstName, lastName, age, address){
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.address = address;
+            }
+            
+            get humanInfo(){
+                return `${this.firstName}, ${this.lastName}, ${this.age}, ${this.address}`;
+            }
+
+            humanInfo(){
+                return `${this.firstName}, ${this.lastName}, ${this.age}, ${this.address}`;
+            }
+
+            print(){
+                console.log('name:' +this.lastName + this.firstName + ' age:' + this.age + ' address:' + this.address) ;
+            }
+        }
+
+        let human1 = new Human('Hyeli', 'lee', 30, 'seoul');
+        let human2 = new Human('miyeon', 'jo', 27, 'incheon');
+        
+        console.log(human1);
+        console.log(human1.humanInfo);
+        //메서드는 괄호()를 넣어줘야 함 , get은 info
+
+        human1.print();
+        human2.print();
+
+
+        //생성자 함수에서는 get 불가-----------------------------------------------
+        //생성자 함수에서 메서드 생성하려면 this를 무조건 붙여야 함
+        
+        function Dancer(firstName, lastName, age, address){
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.address  = address;        
+            
+            //생성자 함수 내에서 메서드 ...? 생성 불가? => this를 붙여서 function 붙여야 
+            //this.메서드명 = function(){ return; }
+            this.dancerInfo = function(){
+                return `${this.firstName}, ${this.lastName}, ${this.age}, ${this.address}`;
+            }  
+        }
+
+        //생성자 함수는 new로 객체선언
+        let dancer1 = new Dancer('leejung', 'lee', '25', 'bucheon');
+        
+
+        console.log(dancer1);
+        console.log(dancer1.dancerInfo());
+        //함수니까 괄호 필요
+
+
+        //const로 리터럴 객체 만들기 => 객체를 하나의 형식으로 여러개 만들 때
+        const person = {
+            firstName : "",
+            lastName : "",
+            age : "",
+            address : "",
+
+            //set 함수 
+            setInfo: function(first, last, age, addr){
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.address = addr;
+            },
+            get personInfo(){
+                return `${this.firstName}, ${this.lastName}, ${this.age}, ${this.address}`;
+            },
+            set setFirstName(first){
+                this.firstName = first;
+            }
+        }
+
+        person.setInfo('minji','lee',25,'seoul');
+        console.log(person);
+        console.log(person.personInfo); //get은 괄호() 안 넣음
+
+
+    </script>
+
+
+</body>
+</html>

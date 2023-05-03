@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>글자색 바꾸기</title>
+    <style>
+        .java{
+            color: palevioletred;
+            font-size: 50px;
+            background-color: beige;
+        }
+
+        .css{
+            color: violet;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }   
+    </style>
+</head>
+<body>
+    <h1 id="heading" class="">javascript</h1>
+    <h3 id="main">위의 글자를 클릭해보세요</h3>
+    <h1 id="home">☞</h1>
+    <script>
+        let heading = document.getElementById('heading');
+        heading.onclick = function(){
+            // heading.style.color='red';
+
+            // heading의 class 리스트에 java가 있으면 빼고, 없으면 넣고
+            heading.classList.toggle('java');
+            //class를 추가해서 스타일을 추가하는 경우가 훨씬 많음
+        }
+
+        let main=document.querySelector('#main'); //.또는 #을 넣어줘야 함
+        main.onclick = function(){
+            main.style.setProperty('font-size',"30px");  //css 스타일 속성 변경
+        }
+
+        // let home = document.querySelector('#home');
+        // home.onclick = function(){
+        //     home.style.setProperty("background-color", "yellow");
+        // } 
+
+        let home = document.getElementById('home');
+        home.onclick = function(){
+            home.classList.toggle('css');
+        }
+
+    </script>
+</body>
+</html>

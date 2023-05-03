@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header {
+            text-align: center;
+        }
+        section{
+            display: flex;
+            justify-content: center;
+        }
+        article{
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 
+      https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json
+
+        여기서 가져와서 화면에 찍기!
+     -->
+
+    <header>
+
+    </header>
+    <section>
+
+    </section>
+
+     <script>
+
+        let header = document.querySelector('header');
+        let section = document.querySelector('section');
+        let str='';
+
+        //홈페이지 텍스트를 json으로 가져오기
+        fetch(`https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json`)
+        .then(resp => resp.json())
+        .then(json => populateHeader(json));
+
+
+        // console.log(json);
+
+        function populateHeader(jsonObj){ // jsonObj는 어디서 튀어나온 것인가... 왜 매개변수로 받아야 하는가..
+            str +=`<h1></h1>`
+            let myH1 = document.createElement('h1'); //createElement.. 태그 속성을 만드는?
+            myH1.innerText = jsonObj['squadName']; //jsonObj[key] => 값을 가져오려고
+            header.appendChild(myH1); //header에 appendChild로 myH1을 추가..?
+            // appendChild() 메소드를 사용하면 지정된 상위 노드의 하위노드 목록 마지막에 노드를 추가할 수 있습니다.
+        
+            let myPara = document.createElement('p');
+            myPara.innerText = 'Hometown: ' + jsonObj['homeTown'] + ' // Formed: ' + jsonObj['Formed']
+            //대소문자 상관없는지?
+            header.appendChild(myPara);
+            showHeroes(jsonObj); //showHeroes 함수호출
+        }
+
+        function showHeroes(jsonObj){
+            console.log(jsonObj);
+            let heroes = jsonObj['members']; //heroes에 members의 키 값 가져와서 담기. 단, 키 값 자체가 객체임.
+
+            for(let i=0; i<heroes.length; i++){ //for문을 돌려서
+                let myArticle = document.createElement('article'); 
+                let myH2 = document.createElement('h2');
+                let myPara1 = document.createElement('p'); 
+                let myPara2 = document.createElement('p'); 
+                let myPara3 = document.createElement('p'); 
+                let myList = document.createElement('ul');
+                
+                myH2.innerText = heroes[i]['name'];
+                myPara1.innerText = 'Secret identity : ' + heroes[i]['secretIdentity'];
+                myPara2.innerText = 'age: ' + heroes[i]['age'];
+                myPara3.innerText = 'Superpowers';
+
+                let power = heroes[i]['powers'];
+                // console.log(power)
+                for(let j=0; j<power.length; j++){
+                    let powerList = document.createElement('li');
+                    powerList.innerText= power[j];
+                    console.log(power[j]);
+                    // myList.innerHTML+=`<li>${power[j]}</li>`;
+                    myList.appendChild(powerList);
+                }                
+                
+                
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myPara1);
+                myArticle.appendChild(myPara2);
+                myArticle.appendChild(myPara3);
+                myArticle.appendChild(myList);
+
+                section.appendChild(myArticle);
+                
+            }
+
+        }
+
+
+        
+
+
+     </script>
+</body>
+</html>

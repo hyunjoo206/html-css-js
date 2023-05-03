@@ -1,0 +1,252 @@
+*{
+}
+#container{
+    font-family: 'Noto Sans', sans-serif;
+    margin-top: 20px;    
+}
+
+#imgBox{
+    text-align: center;
+}
+
+#contents{
+    width: 980px;
+    /* background-color: azure; */
+    margin: 0 auto;
+}
+
+
+#evt-nav{
+    /* background-color: beige; */
+    width: 100%;
+    margin-top: 20px;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    border-top: 1px solid rgb(165, 165, 165);
+    display: flex;
+}
+
+#evt-nav #evt-menu{
+    margin: 0 auto;
+    width: 980px;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+}
+
+#evt-menu li{
+    float:left;
+    margin-right:58px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#evt-menu li:last-child{
+    margin-right: 0;
+}
+
+#evt-menu a{
+    color:rgb(39, 39, 39);
+}
+
+/* 핫딜영역 */
+
+#sub_hr{
+    width: 900px;
+    height: 50px;
+    border-top: 3px solid #ad7b58;
+    margin-top: 110px;
+    margin-bottom: 40px;
+    /* background-color: rgb(209, 255, 255); */
+}
+
+#sub_text_box{
+    width: 900px;
+    height: 80px;
+    margin: 0 auto;
+    /* background-color: chartreuse; */
+    position:absolute;
+    top:715px;
+}
+#sub_text{
+    width: 280px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sub_text p:first-child {
+    font-size: 32px;
+    font-weight: 700;
+    color: #fb4357;
+    letter-spacing:-1px;
+}
+
+#nowhotdeal::after{
+    content: url(../img/store/hotdeal_big.png);;
+    display: inline-block;
+    margin-left: 5px;
+    margin-top:40px;
+    margin-bottom: 20px;
+    height: 10px;
+    width: 10px;
+}
+
+#sub_text p:last-child {
+    font-size: 20px;
+    color: #000000;
+    letter-spacing:-1px;
+}
+
+
+#hotdeal_wrap{
+    width: 900px;
+    height: 455px;
+    /* background-color: rgb(121, 121, 121); */
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+#hotdeal_content li {
+    width: 270px;
+    height: 360px;
+    /* background-color: beige; */
+    margin-right: 45px;
+    float: left;
+}
+
+#hotdeal_content li:hover{
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1),
+     0 6px 4px rgba(0, 0, 0, 0.1);
+}
+
+#hotdeal_content li:last-child{
+    margin-right:0;
+}
+
+#hotdeal_content img{
+    width: 270px;
+    height: 270px;
+    margin-bottom: 10px;
+}
+
+#hotdeal_content a{
+    text-align: center;
+}
+
+#spanMain{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#discount{
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(255, 51, 0);
+}
+
+#price{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+#hotdealBox{
+    width: 800px;
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+}
+#timeEvt1{
+    width: 150px;
+    height: 75px;
+    background-color: rgba(236, 0, 0, 0.76);
+    color: white;
+    padding-top: 8px;
+    text-align: center;
+    font-size: 1.2vh;
+    /* position: absolute; */
+    letter-spacing :1px;
+    margin-right: 20px;
+}
+
+/* manu-wrap */
+
+#menu-wrap{
+    width: 900px;
+    /* background-color: azure; */
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    margin-bottom: 100px;
+}
+
+#menu-left{
+    width: 450px;
+    height: 560px;
+    /* background-color: #fb4357; */
+}
+#menu-right{
+    width: 450px;
+    height: 560px;
+    /* background-color: #ffb6be; */
+}
+
+#menu-sort{
+    width: 430px;
+    height: 48px;
+    /* background-color: aliceblue; */
+    border-bottom: 1px solid grey;
+    margin-bottom: 10px;
+}
+
+#menu-sort p{
+    font-size: 28px;
+    letter-spacing: -1px;
+    float: left;
+
+}
+
+#menu-sort img{
+    float: right;
+    margin-top: 10px;
+}
+
+#menu-list li{
+    box-sizing: border-box;
+    width: 460px;
+    height: 160px;
+    /* background-color: beige; */
+    margin-top: 20px;
+}
+
+#menu-list img{
+    width: 160px;
+    height: 160px;
+    float: left;
+}
+
+#menubox{
+    width: 300px;
+    height: 104px;
+    padding: 28px;
+    /* background-color: aquamarine; */
+    float: right;
+}
+#menubox:hover{
+    opacity: 0.3;
+}
+#menubox p:first-child{
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+#menubox h3{
+    margin-top: 10px;
+}
+
+
+
+
+
+

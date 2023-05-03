@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자 연습문제</title>
+    <style>
+        
+        /* a태그는 링크를 클릭했는지에 따라서 글꼴 색이 달라지는 태그 
+            => 가상선택자(의사선택자) 
+            a:active(클릭할 때 색)
+            a:visited (링크를 눌러본 후 색)
+        */
+        a{
+            text-decoration: none; /*a태그 링크걸린 선 없애기*/
+            color :beige;           
+        }
+
+        a:visited{color: white;}
+        a:active{ color: aquamarine;} /*순서 중요*/
+
+        /* 모든 div 태그에 적용할때 */
+        div{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 50px;
+        }
+        
+
+        /* hover할 때 바뀔 것들 따로 */
+        #naver:hover{
+            color: greenyellow;
+            background-color: rgb(179, 179, 179);
+        }
+
+        #naver{
+            color: blue;
+            background-color:rgb(217, 255, 161);
+            font-family:Verdana;
+            font-weight: 700;
+            font-size: 70px;
+        }
+
+
+        .g{
+            background-color:rgb(255, 202, 220);
+            font-size: 50px;
+        }
+
+        .g:hover{
+            background-color: gainsboro;
+        }
+        #d{
+            background-color: orange;
+            background: linear-gradient(50deg, skyblue, yellow, Orange);
+            font-size: 50px;
+        }
+
+        ul{
+            font-size: 28px;
+            
+        }
+        li:nth-child(even){
+            color: red;
+        }
+
+        li:nth-child(3n){
+            color: green;
+        }
+
+        li:first-child, li:last-child{
+            font-weight: 900;
+        }
+
+        /* li:nth-child(10){
+            font-weight: 900;
+        } */
+
+        li::after{
+            content:" 번째";
+        }
+
+        li::before{
+            content: "li태그 ";
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- div태그 3개 만들어서 naver, google, daum 사이트로 연결 -->
+    <div id="naver">
+        <a href="https://www.naver.com/" target="_blank">naver</a>
+    </div>
+    <div class="g">
+        <a href="https://www.google.com/?&bih=853&biw=835&hl=ko" target="_blank">google</a>
+    </div>
+    <div id="d">
+        <a href="https://www.daum.net/" target="_blank">daum</a>
+    </div>
+    <div id="y" >
+        <a href="http://www.youtube.com" target="_blank">YOUTUBE</a>
+    </div>
+
+    <!--  
+        전체 글자크기, 굵기 크게
+        짝수 : 빨간색
+        3, 6, 9 : 초록색
+        1, 10 : 굵게 설정
+    -->
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+
+</body>
+</html>

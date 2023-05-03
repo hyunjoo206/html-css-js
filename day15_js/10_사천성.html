@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td{
+            border: 1px solid rgb(37, 37, 37);
+        }
+        table{
+            border-collapse: collapse;
+            /* collapse : 표(table)의 테두리와 셀(td)의 테두리 사이의 간격을 없앱니다. 
+            겹치는 부분은 한 줄로 나타냅니다. */
+            border-spacing: 0;
+            margin: 100px auto;
+        }
+        .pic{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr id="board"></tr>
+    </table>
+    <script>
+        let model = ["emoji1.png","emoji1.png",
+                    "emoji2.png","emoji2.png",
+                    "emoji3.png","emoji3.png",
+                    "emoji4.png","emoji4.png",
+                    "emoji5.png","emoji5.png",
+                    "emoji6.png","emoji6.png"
+                    ];
+
+        window.addEventListener("load", function(){ //화면이 띄워질 때 실행되도록
+            //모델 섞기
+            for(let a=0; a<10000; a++){
+                let ran = Math.floor(Math.random()*12);
+                let tmp = model[0];
+                model[0] = model[ran];
+                model[ran] = tmp;
+            }
+
+            // 모델을 화면에 뿌린다
+            let board = document.getElementById('board');
+            for(let b=0; b<model.length; b++){
+                board.innerHTML += "<td><input class='pic' type='image' src='/img/"
+                    + model[b] + "'value='" + model[b] + "'></td>";
+            }
+
+            let pic = document.querySelectorAll(".pic");
+            // 이미지의 투명도가 1초 후에 0이 된다.
+            setTimeout(function(){
+                for(let c=0; c<pic.length; c++){
+                    console.log(pic[c]);
+                    pic[c].style = "opacity:0";
+                }
+            }, 1000);
+
+            let count = 0;
+            let success = 0; //success == model.length/2
+            // 이미지 클릭에 반응하도록
+            let onePic = null;
+            let twoPic = null;
+            
+            for(let d=0; d<pic.length; d++){
+                pic[d].addEventListener("click", function(){
+                    console.log(this);
+                    this.style = "opacity:1"
+                    // 첫번째 이미지인지, 두번째 이미지인지 확인
+                    count++;
+                    console.log(count);
+                    if(count==1){
+                        // 첫번째 데이터 저장
+                        onePic = this;
+                        console.log(onePic);
+                    }else if(count==2){
+                        twoPic = this;
+                        // 게임진행
+                         console.log(onePic,twoPic);
+                         if(onePic.value == twoPic.value){ //맞으면
+                            success++;
+                            if(success == model.length/2){
+                                alert("성공");
+                            }
+
+                            //onePic, twoPic의 클릭이벤트 종료
+                            event.stopPropagation(); //상위 엘리먼트의 이벤트 전파하는 것을 중단
+                            event.preventDefault(); //이벤트 종료
+
+                         }else{ //다르면
+                            //오답일 경우 0.3초 뒤에 사진 투명해짐
+                            setTimeout(function(){
+                                console.log(onePic,twoPic)
+                                    onePic.style = "opacity:0"
+                                    twoPic.style = "opacity:0"                        
+                            }, 300);
+                         }
+                         count =0;
+                    }else{
+                        alert("버그!");
+                    }
+                })
+            }
+        })
+
+
+    </script>
+</body>
+</html>

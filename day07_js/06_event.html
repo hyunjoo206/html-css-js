@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        이벤트 객체는 전역객체로써 모든 태그에 객체를 참조시킬 수 있다.
+    </h1>
+    <ul>
+        <li>
+            a 태그와 button 태그에 이벤트를 주로 참조시켜 클릭에 대한 
+            반응을 기대할 수 있게 만드는 구조가 일반적임
+        </li>
+        <li>
+            a 태그는 href 속성에 의해 자체 이동이 구현되어 있어서 이동을 막는 코드가 필요
+        </li>
+        <li>
+            이벤트 객체를 부여하는 방식 3가지. 각자 목적과 작동방식이 다르다.
+        </li>
+    </ul>
+
+    <ul>
+        <li>
+            화면 출력 영역 Document영역(객체)라고 한다
+        </li>
+        <li>
+            태그는 html element, 속성은 attribute, 일반 텍스트는 textNode라고 한다
+        </li>
+        <li>
+            html 태그로 출력 : innerHTML라는 property를 사용
+        </li>
+        <li>
+            text로 출력 : innerText라는 property를 사용
+        </li>
+        <li>
+            객체의 값을 가져올 때 (id) : getElementById('id명')
+        </li>
+        <li>
+            객체의 값을 가져올 때 (class) :querySelector('selector')
+        </li>
+
+    </ul>
+    <button type="button" onclick="javascript:eventFunc();">클릭1</button>
+    <button type="button" onclick="javascript:eventFunc2(100);">클릭2</button>
+    <button type="button" onclick="alert('경고창 띄우기');">alert</button>
+    <button type="button" id="testBtn">testButton</button>
+    <button type="button" id="hiBtn">hiButton</button>
+    <h1 id="printResult">
+
+    </h1>
+    <script>
+        function eventFunc(){
+            let printResult = document.getElementById('printResult');
+            //화면에서 element 속성이 id가 printResult인 애를 가져와라
+            printResult.innerText = '클릭1 버튼을 클릭하면 이 글자가 나타납니다.'
+        }
+
+        function eventFunc2(num){
+            let printResult = document.getElementById('printResult');
+            printResult.innerHTML = `<span style="color:red;">스팬태그 사용했습니다.${num}</span>`+num;
+        }
+
+        // 다른 방법
+        document.getElementById('testBtn').addEventListener('click', ()=>{
+            alert('testButton을 클릭해서 띄운 alert~!!');
+        })
+
+        document.getElementById('hiBtn').addEventListener('click', ()=>{
+            alert('하이하이하이하이~~!~!');
+        })
+
+
+
+
+
+    </script>
+</body>
+</html>

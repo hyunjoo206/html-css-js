@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation</title>
+    <!-- 
+        1. 에니메이션 등록(@keyframes)
+            - 시간비율은 0~100%, 0%=from , 100% = to로 대체가능
+        
+        @keyframes 애니메이션 명{
+            시간비율{
+                스타일;
+            }
+            시간비율{
+                스타일;
+            }
+        }
+
+        2. 애니메이션 적용
+            - animation-name : 동작할 애니메이션 이름
+            - animation -duration : 애니메이션 동작시간
+            - animation-iteration-cout : 애니메이션 반복 횟수 , 숫자 or infinite
+     -->
+     <style>
+        body{
+            position: relative;
+        }
+        @keyframes scaleFont {
+            0%{ /*from으로 해도 됨*/
+                font-size: 20px;
+            }
+            50%{
+                font-size: 40px;
+            }
+            100%{ /*to로 해도 됨*/
+                font-size: 20px;
+            }
+        }
+
+        .ani{
+            animation-name: scaleFont;
+            animation-duration: 5s;
+            animation-iteration-count: infinte;
+        }
+
+        @keyframes move{
+            from{
+                left: 0;
+            }
+            50%{
+                left: 90%;
+            }
+            to{
+                left: 0;
+            }
+
+        }
+
+
+        .box{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 2px solid salmon;
+            animation-name: move;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        .box>img{
+            width: 200px;
+            height: 200px;
+        }
+
+     </style>
+</head>
+<body>
+    <span class="ani">주목!!</span>
+    <div class="box">
+        <img src="/img/gotohome.jpg" alt="">
+    </div>
+</body>
+</html>

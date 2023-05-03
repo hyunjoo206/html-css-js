@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container{
+        border: 1px solid black;
+        background-color: gainsboro;
+        width: 330px;
+        text-align: center;
+        border-radius: 5px;
+    }
+    .top_area{
+        width: 300px;
+        padding: 10px;
+    }
+    button{
+        width: 80px;
+        height: 50px;
+        margin : 5px;
+        color: rgb(0, 0, 0);
+        background-color: rgb(255, 255, 255);
+        font-size: 20px;
+        border-radius: 5px;
+    }
+    button:last-child{
+        width: 175px;
+    }
+
+    button:hover{
+        background-color: rgb(236, 236, 236);
+    }
+    
+    h1{
+        width: 300px;
+        height: 80px;
+        border : 1px solid black;
+        box-sizing: border-box;
+        margin: 5px;
+        padding : 5px;
+        margin-top: 20px;
+        margin-left:15px;
+        background-color: rgb(245, 245, 245);
+    }
+    
+    </style>
+<body>
+    <div class="container">
+        <h1 class="result_area" id="printFomula"></h1>
+        <div class="top_area">
+            <button type="button" value="7">7</button>
+            <button type="button" value="8">8</button>
+            <button type="button" value="9">9</button>
+            <button type="button" value="4">4</button>
+            <button type="button" value="5">5</button>
+            <button type="button" value="6">6</button>
+            <button type="button" value="1">1</button>
+            <button type="button" value="2">2</button>
+            <button type="button" value="3">3</button>
+            <button type="button" value="0">0</button>
+            <button type="button" value=".">.</button>
+            <button type="button" value="+">+</button>
+            <button type="button" value="*">*</button>
+            <button type="button" value="-">-</button>
+            <button type="button" value="/">/</button>
+            <button type="button" value="=">=</button>
+            <button type="button" value="C">C</button>
+        </div>
+    </div>
+    <script>
+        const fomula = document.getElementById('printFomula');
+        //printFomula라는 id를 가진 h3태그의 문서를 나타내는 값을 변수 fomula에 담음
+        let fomulaValue = "";
+        // fomulaValue라는 변수를 비어있는 상태로 초기값을 줌
+
+        //연산의 결과를 나타낼 함수----------------------------------------------------
+        function operation(f, o, l){ //operation이라는 이름의 함수, 매개변수로 f,o,l을 받음
+            let result = 0; //결과를 담을 변수 result를 0으로 초기화,선언
+            switch(o){ //o가 +,-,*,/중 하나이면 아래에서 해당하는 값을 result에 담음 
+                case "+" : result = f + l; break;
+                case "-" : result = f - l; break;
+                case "*" : result = f * l; break;
+                case "/" : result = f / l; break;
+                default : break;
+            }
+            return result.toFixed(2);
+            //왜한건지 모르겠음...toFixed..?
+        }
+
+        //연산을 하기 위한 f o l 따로 구분해주기 --------------------------------------
+
+        function extractValue(strValue){ //매개변수로 strValue를 받는 extractValue 함수 strValue는 어디서 온건디..
+            //왜 이렇게 하는 건지 진짜 모르겠음... 뭔소리여... 왜 substring을...?
+            let firstNum = strValue.substring(0,strValue.indexOf(" ")); // substring(startindex, indexnum)
+            let operator = strValue.substr(strValue.indexOf(" ")+1, 1); // substr(startindex, count)
+            let lastNum = strValue.substring(strValue.lastIndexOf(" ")+1);
+
+            return operation(parseFloat(firstNum), operator, parseFloat(lastNum)); //parseFloat은 왜 해주는 걸까...
+        }
+
+        document.querySelector('.container').addEventListener('click', function(e){ //컨테이너를 클릭했을때 실행되게...
+            let btnValue = e.target.value;
+            
+            if(!isNaN(btnValue)){ // btnValue가 숫자일 때
+                fomulaValue += btnValue;
+            }else{
+                if(btnValue != undefined){
+                        switch(btnValue){
+                            case 'C':
+                                fomulaValue = "";
+                                fomula.innerText = "";
+                                break;
+                            case '.':
+                                fomulaValue += btnValue;
+                                break;
+                            default :
+                                let result = ""; //사칙연산에 대한 결과 변수
+                                if(btnValue == "="){
+                                    result = extractValue(fomulaValue); //클릭한 숫자의 나열
+                                    fomulaValue = result; // 새로 추가한 코드 결과만 출력하기
+                                    btnValue = "";
+                                }
+                                //값이 =가 아닌 사칙연산의 경우
+                                fomulaValue += `${btnValue}`;
+                                console.log(fomulaValue);
+                                break;
+
+                        }
+                }
+            }
+            fomula.innerText = fomulaValue;
+        });
+
+    </script>
+
+</body>
+</html>

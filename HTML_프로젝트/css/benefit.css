@@ -1,0 +1,171 @@
+#container{
+    margin-top: 20px;    
+}
+#contents{
+    width: 980px;
+    /* height: 1200px; */
+    /* background-color: azure; */
+    margin: 0 auto;
+}
+
+#heading-wrap{
+    /* background-color: bisque; */
+    border-bottom: 3px solid black;
+    font-size: 32px;
+    padding: 15px 0;
+    margin-bottom: 20px;
+}
+
+#heading-wrap h3{
+    font-weight: 500;
+}
+
+#eventGalleryBox{
+    width: 980px;
+    height: 310px;
+    display: flex;
+    margin-top: 10px; 
+    margin-bottom: 20px;   
+    overflow: hidden;
+}
+
+#slidesTop{
+    width: 2205px;
+    height: 310px;
+    /* transform: translateY(-310px); */
+
+    transition: transform 0.3s;
+}
+
+#btnArea{
+    width: 980px;
+    height: 30px;
+    margin-left: 310px;
+    /* background-color: aqua; */
+    position: absolute;
+    top:690px;
+}
+
+#btnArea button{
+    width: 24px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.781);
+    border-radius: 20px;
+    margin-right: 10px;
+    position: relative;
+    border-style: none;
+}
+
+#btnArea button:hover{
+    cursor: pointer;
+}
+
+#inner{
+    width: 735px;
+    float: left;
+}
+
+#eventAdbox{
+    margin-left: 30px;
+}
+
+
+#evt-nav{
+    /* background-color: beige; */
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+}
+
+#evt-nav #evt-menu{
+    width: 700px;
+    background-color: rgb(255, 255, 255);
+    padding: 20px;
+}
+
+#evt-menu li{
+    float:left;
+    margin-right:50px;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+#evt-menu a{
+    color:#6a6f77;
+}
+
+#cols-content{
+    margin-top: 20px;
+    /* background-color: rgb(221, 221, 221); */
+    width: 980px;
+}
+
+#sect-evt{
+    width: 980px;
+    /* background-color: lightpink; */
+    margin: 0 auto;
+}
+
+#sect-evt li{
+    width: 314px;
+    height: 318px;
+    float: left;
+    margin-right: 19px;
+    margin-bottom: 32px;
+}
+#sect-evt li:nth-child(3n){
+    margin-right: 0;
+}
+
+#evt-thumb{
+    width: 314px;
+    height: 196px;
+    background-color: tomato;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* div가 차지하는 높이 설정 */
+}
+
+#evt-thumb img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#evt-desc{
+    width: 314px;
+    height: 108px;
+    background-color: rgb(255, 255, 255);
+    border-left: 1px solid gainsboro;
+    border-right: 1px solid gainsboro;
+    border-bottom: 1px solid gainsboro;
+}
+
+#evt-desc p:first-child{
+    width:314px;
+    height: 56px;
+    font-size: 15px;
+    font-weight:600;
+    padding: 18px 11px;
+    box-sizing: border-box;
+}
+
+#evt-desc p:last-child{
+    font-size: 13px;
+    padding: 17px 11px;
+    color: grey;
+}
+
+#btnMoreData{
+    width: 980px;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 80px;
+    border-style: none;
+    font-weight: bold;
+    color: rgb(82, 82, 82);
+}
+
+#btnMoreData:hover{
+    cursor: pointer;
+}
+

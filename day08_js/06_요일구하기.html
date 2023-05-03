@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>요일구하기</title>
+</head>
+<body>
+    <h1>
+        오늘은?
+    </h1>
+    <button type="button" onclick="getToday();">today</button>
+    <h3 id="h3">
+        <!-- 오늘 날짜와 요일을 출력 -->
+        <!-- 2023-04-13(목) -->
+    </h3>
+
+    <script>
+
+        function getToday(){
+
+            let now = new Date();
+            let day; //요일 변수선언
+            let year = now.getFullYear();
+            let month = ('0'+ (now.getMonth()+1)).slice(-2);
+            //slice는 가져오는 건데 음수를 붙여서 -2니까 뒤에서부터 두자리 가져옴.
+            // 0 
+            let date = now.getDate();
+            switch(now.getDay()){
+                case 1 : day = '월' ; break;
+                case 2 : day ='화' ; break;
+                case 3 : day ='수' ; break;
+                case 4 : day ='목' ; break;
+                case 5 : day ='금' ; break;
+                case 6 : day ='토' ; break;
+                default : day ='일' ; break;
+            }
+            console.log(day);
+    
+            //화면 출력
+            document.getElementById('h3').innerText =
+            `${year}-${month}-${date}-(${day})`
+        }
+
+
+    </script>
+</body>
+</html>

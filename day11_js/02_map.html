@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map type</title>
+</head>
+<body>
+    <h1>
+        Map : key / value 쌍의 형태의 데이터를 한 개의 배열로 만들어서 다시 배열에 저장하는 방식
+    </h1>
+    <ul>
+        <li>
+            선언 및 초기화 :  new Map(), new Map([['key','value'],['key','value'],...])
+        </li>
+        <li>
+            기본적으로 중첩구조를 가지고 있기 때문에 key 중복확인 필수
+        </li>
+        <li>
+            key를 식별자로 사용하는 get(keyName), set(keyName, value)메서드 제공
+        </li>
+        <li>
+            2차원 배열형태와 비슷한 구조
+        </li>
+        <li>
+            <b>key의 타입은 문자</b>로 하는 것이 원칙 => key의 타입이 달라지면 관리가 어려워지기 때문
+        </li>
+    </ul>
+    <ul>
+        <li>
+            set(key,value) : 키에 해당하는 값을 변경
+        </li>
+        <li>
+            get(key) : key에 해당하는 value 값을 리턴
+        </li>
+        <li>
+            delete(key) / has() / forEach() /entries() =>key,value 확인 / size
+        </li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+       const myMap = new Map();
+       //myMap.add()안됨 x set()으로 추가!!
+       myMap.set("html",85); 
+       myMap.set("css",90); 
+       myMap.set("js",96);
+
+       console.log(myMap);
+       console.log(myMap.get('js')) //키(js)값으로 value(96)값 찾기
+
+       myMap.delete("css")
+       console.log(myMap.has('css')) //has로 확인하기 => true/false로 나옴
+
+       console.log("-------------")
+       myMap.forEach(function(value, index, self){
+            console.log(index, value, self);
+       })
+
+       //오류남
+    //    myMap.entries.forEach(function(v,k,s){
+    //     console.log(k,v,s);
+    //    })
+
+    console.log(myMap.entries());
+    console.log('---------------')
+
+    //콜백함수 : value, index, self(array)
+
+    for(const iter of myMap.entries()){
+        // console.log(iter);
+        iter.forEach(function(v,k){
+            console.log(k,v);
+        })
+    }
+
+    console.log(myMap.keys());
+    myMap.clear();
+    console.log(myMap.size);
+
+
+    // foreach 반복문은 오직 Array 객체에서만 사용가능한 메서드
+    // for  .... in 반복문  객체의 key값과 value 값을 뽑아내는데 유용
+    // for ...of 반복문  컬렉션 객체가 [Symbol.iterator] 속성을 가지고 있어야만 한다
+    // for in과 of의 차이 
+    // for in 반복문 : 객체의 모든 열거 가능한 속성(property)에 대한 반복
+    // for of 반복문 : [Symbol.iterator] 속성을 가지는 컬렉션 전용
+
+
+
+
+    </script>
+</body>
+</html>

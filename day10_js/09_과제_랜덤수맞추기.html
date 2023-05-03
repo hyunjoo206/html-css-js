@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        <button type="button" id="ranBtn">랜덤 숫자 생성 버튼</button>
+    </h1>
+    <h3 id="printMsg"></h3>
+    <h1>
+        <input type="number" id="myGuess" max="99" min="0">
+        <button type="button" id="guessBtn">맞추기!!</button>
+    </h1>
+    <h3 id="result"></h3>
+    <script>
+        let ranNum=0; //아래에서도 써야 하니까 지역변수가 아니라 위에서 선언!
+   
+        //화면출력
+        document.getElementById("ranBtn").addEventListener("click", function(){
+            ranNum = Math.floor((Math.random()*99))+1; //1~99까지 랜덤숫자 생성
+            document.getElementById("printMsg").innerHTML = "랜덤으로 숫자를 생성하였습니다.";            
+            console.log(ranNum); //콘솔에 출력해서 보려고 -> 사실 없어도 되는 코드 (확인용)
+        })
+        
+        document.getElementById("guessBtn").addEventListener("click", function(){
+            let myNum = document.getElementById("myGuess").value 
+            let result = document.getElementById("result")
+            let str=''; //문자열을 담을 변수를 선언
+            console.log(ranNum);
+            if(myNum == ranNum){
+                 str=`정답입니다. 컴퓨터의 숫자는 ${ranNum}이었습니다`;
+            }else if(myNum > ranNum){
+                str = "Down";
+            }else{
+                str = "Up";
+            } 
+            
+            result.innerHTML = str;
+        })
+
+    </script>
+</body>
+</html>

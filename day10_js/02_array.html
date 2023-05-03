@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        자바스크립트의 배열은 유동배열 : 크기와 데이터가 변경이 가능하다.
+    </h1>
+    <ul>
+        <li>
+            const myArray = [1,2,3,'a','b','c']
+        </li>
+        <li>
+            원래는 배열 안의 데이터 타입은 같게 만드는 것이 룰 <br>
+            그러나 자바스크립트에서는 허용함
+        </li>
+        <li>
+            myArray=[]; : 초기값이 없는 빈 배열을 만든 후 데이터를 추가하여 사용
+        </li>
+        <li>
+            각 데이터들은 콤마(,)로 분리되고 분리된 자료는 index를 갖는다.(0부터 시작)
+        </li>
+        <li>
+            length(길이) : 총길이를 확인할 수 있음.
+        </li>
+    </ul>
+
+    <script>
+        // const myArray = new Array('a',1,2) : 잘 사용하지 않는 방법
+        const myArray = ['a',"b",`c`,1,2,3]
+        console.log(myArray)
+        console.log(myArray.length);
+        console.log(myArray[2]);
+        console.log(myArray[myArray.length-1]); // 마지막 배열값 추출
+        myArray[6]=4;
+        console.log(myArray)
+        
+        //배열의 원소 추가 : 배열의 길이를 모른다고 가정
+        // 'add' 추가
+        myArray[myArray.length]='add';
+        console.log(myArray);
+
+        myArray[myArray.length+3]='new';
+        console.log(myArray);
+        //비어있는 공간 3개 생김 그리고 그 다음에 new가 들어감
+        console.log(myArray[8]) //undefined
+        console.log(myArray[9]) //undefined
+        console.log(myArray[10]) //undefined
+
+        //const로 배열을 선언하게 되면 배열의 값을 변경은 가능하나 
+        //배열 자체를 변경할 수는 없다. 
+
+        //배열의 초기화가 필요한 로직은 let으로 선언함
+
+        //원래 배열은 같은 데이터 타입만 배열의 원소로 사용하는 것이 원칙임~!!
+        //유사배열(연관배열) : associative Array > 배열 관련 메서드 중 사용할 수 없는 것들이 있음
+
+
+        //배열의 내용 탐색
+        for(let i=0; i<myArray.length; i++){
+            console.log(myArray[i])
+        }
+
+        let asscocArrayType = [1, true, 'hong', undefined, {k : 'value'}, ['k','g']];
+        console.log(asscocArrayType);
+        for(let i=0; i<asscocArrayType.length; i++){
+            if(i == 4){
+                console.log(asscocArrayType[i].k);
+            }else{
+                console.log(asscocArrayType[i]);
+            }
+        }
+
+        
+        
+
+    </script>
+</body>
+</html>

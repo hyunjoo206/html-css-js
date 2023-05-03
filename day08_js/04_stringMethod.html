@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String_method</title>
+</head>
+<body>
+    <h1>
+        가장 많이 다루는 데이터 타입 : string
+    </h1>
+    <ul>
+        <li>
+            문자열 데이터는 index(0부터 시작)를 가지고 있음
+        </li>
+        <li>
+            문자열 데이터 값 내에서는 개행(br)하는 것을 추천하지 않는다.
+        </li>
+        <li>
+            new String(); 객체 타입으로 선언은 가능하지만 추천하지 않는다.
+
+        </li>
+        <li>
+            length : 문자열의 총 길이 => index는 length-1 
+        </li>
+        <li>
+            <script>
+                let str = "문자열 사이의 <script> 글자 삽입";
+                console.log(str);
+            </script>
+        </li>
+    </ul>
+    <h1>
+        문자관련 메서드 : java에서 사용하는 String 메서드와 비슷(다른 프로그래밍 언어도 비슷)
+    </h1>
+    <ul>
+        <li>
+            문자 추출 관련 메서드 : substring(), substr(), slice()
+        </li>
+        <li>
+            문자 대체 메서드 : replace(oldStr, newStr) : 첫번째 매칭되는 문자만, 대소문자 구분
+        </li>
+        <li>
+            trim() : 문자열 양측 공백제서
+        </li>
+        <li>
+            padStart / padEnd : 앞쪽에서/ 뒷쪽에서 채우기 <br>
+            문자값의 힌트, 010101 = *******
+        </li>
+        <li>
+            charAt(index) : 해당 index 문자추출
+        </li>
+        <li>
+            indexOf("str") : 문자열의 위치를 반환
+        </li>
+        <li>
+            <!-- 첨부파일 끝에 확장자 체크할 때 주로 사용 -->
+            startWith("str") / endWith("str") : 지정 문자열이 탐색대상 문자열에서 시작/끝에 존재하는지 확인하는 메서드 
+            return => true / false
+        </li>
+    </ul>
+
+    <script>
+        let str1 = "Apple, Banana, Orange";
+        let startIndex = 0;
+        let endIndex = 5; //endIndex는 미포함
+        console.log(str1.slice(startIndex, endIndex));
+        console.log(str1.slice(7)) //index ~ 끝까지
+        console.log(str1.slice(-6)); //뒤에서부터 
+        //slice는 substring과 사용방법이 같음
+        //slice는 index에 -숫자를 입력하면 뒤에서부터 추출 가능
+
+        //substr(index, count); 시작위치에서부터 count개까지 추출
+        console.log(str1.substr(0,5)); //0~5개
+
+        //replace 
+        let text = "Hello Java World~";
+        let newText = text.replace("Java","JavaScript");
+        console.log(newText)
+
+        newText=text.replace(/JAVA/i, "javaScript") //   /문자/i =>대소문자 구분X
+        console.log(newText)
+
+        text = "Hello java World java~!!";
+        newText = text.replace(/Java/ig,"JavaScript"); //   /문자/g =>문자열 전체에 적용 
+        // /문자/ig => 대소문자 구분x,문자열 전체 적용
+        console.log(newText);
+
+        let trimText = "                   이번주 학습 과정                "
+        console.log(trimText.trim()); //공백제거
+
+        //padStart(전체 문자열개수, "str") / padEnd()
+        let padText = "abc";
+        console.log(padText.padStart(5,"*")); 
+        //padStart는 앞쪽에 채우라는 의미고, 총 글자수는 5개, 부족한 글자수는 *로 메꿔라
+
+        let padText2 = "abc의 정의";
+        console.log(padText2.padStart(20,"-"))
+
+        let padText3 = "def의 정의"
+        console.log(padText3.padEnd(20,"-"))
+
+        //000101-1234567 > 000101-1******
+        let ptext = "000101-1234567"
+        console.log(ptext.substring(0,8).padEnd(14,"*"))
+        //substring으로 문자열 자른 후 padEnd로 *추가
+
+        //주민번호 뒷자리 1이면 남자, 2면 여자
+        
+        console.log(ptext.substring(7,8)) // 1이 나옴
+
+        if (ptext.substring(7,8) == "1") {
+            console.log("남자");
+        }
+        else{
+            console.log("여자");
+        }
+
+        //삼항연산자와 charAt으로 더 쉽게 
+        //charAt은 7번째 글자를 가져오는 것
+        console.log(ptext.charAt(7)) // 1 나옴
+        ptext.charAt(7) == "1" ? console.log("남자") : console.log("여자");
+
+
+        //선생님이 하신 방법--------------------------
+
+        let rNum = "000101-1234567";
+        //주민번호 전체길이
+        let rNumLen = rNum.length;
+        //표현되어야 하는 문자열만큼 추출
+        let rNumSub = rNum.slice(0,8);
+        let rNumStr = rNumSub.padEnd(rNumLen,"*");
+        console.log(rNumLen, rNumSub, rNumStr);
+        let rNumStr2 = rNum.slice(0,8).padEnd(rNumLen, "*");
+        console.log(rNumStr2);
+
+        let idNum =- rNum.charAt(7);
+        // -다음의 숫자
+        idNum = rNum.charAt(rNum.indexOf("-")+1);
+        console.log(idNum);
+
+        if(idNum == "1"){
+            console.log('남자');
+        }else{ console.log('여자'); }
+
+        console.log(idNum="1"? "남자" : "여자" )
+        console.log('------------------')
+
+        //문제 ---------------중요함!!---------------------
+
+        let fullFileName = "20230413_javascript.string_method.html"
+        //slice나 substring 둘 중 아무거나 써도 결과 같음
+
+        //파일명 추출(string_method => .과. 사이의 글자)
+        let fileName =  fullFileName.slice(fullFileName.indexOf('.')+1,fullFileName.lastIndexOf('.')); //20230413_javascript.string_method      
+        console.log(fileName);
+
+        //파일작성일자 추출(20230413 => _ 전에 있는 숫자)
+        let filedate = fullFileName.slice(0,fullFileName.indexOf('_'));
+        console.log(filedate);
+
+        //확장자 추출(html => )
+        let fileExtension = fullFileName.substring(fullFileName.lastIndexOf('.')+1);
+        console.log(fileExtension);
+
+        
+
+
+    </script>
+</body>
+</html>

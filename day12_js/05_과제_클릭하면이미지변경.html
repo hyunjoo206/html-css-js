@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연습문제4</title>
+    <link rel="stylesheet" href="style2.css">
+    <!-- link로 css 링크 걸어주고, 아래 스타일을 또 줘도 됨! -->
+    <style>
+
+        body{
+            text-align: center;
+        }
+
+        #d1{
+            margin: 50px;
+        }
+
+        h1{
+            border: 5px solid black;
+            width: 12%;
+            height: 50px;
+            margin: 30px auto;
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+        ul>li{
+            font-size: 20px;
+            list-style: none;
+            display: inline;
+            margin-right: 20px;
+
+        }
+        .home{
+
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1>Travel</h1>
+    <div id="d1">
+        <ul>
+            <li><a id="main" class="links home" href="#" onclick="clickCity(this);">Home</a></li>
+            <li><a id="seoul" class="links" href="#" onclick="clickCity(this);">Seoul</a></li>
+            <li><a id="tokyo" class="links" href="#" onclick="clickCity(this);">Tokyo</a></li>
+            <li><a id="paris" class="links" href="#" onclick="clickCity(this);">Paris</a></li>
+        </ul>
+    </div>
+   
+    <div>
+        <img src="/img/main.jpg" alt="Home" id="cityImg" width="80%">
+    </div>
+    <script>
+        const clickCity = (elem) => {
+            let idVal = elem.id; //변수에 element의 id값을 가져와서 넣음
+            //------------------------------------------------------------------------------ 요 사이는 없어도ㅇㅋ
+            let clsVal = elem.classList[0];  //class는 여러개 가질수 있어서 list로 가져옴 배열로 저장 ['links'] 
+                //classList를 왜 쓴건데...? 
+            // elem의 classList의 0번지 값을 가져와서 clsVal에 넣음
+            console.log(idVal); 
+            console.log(clsVal);
+            //------------------------------------------------------------------------------
+            document.getElementById('cityImg').src =
+            `/img/${idVal}.jpg`; //image에 idVal을 가져와서 해당 이름인 파일을 열어라.
+        }
+    </script>
+
+</body>
+</html>
